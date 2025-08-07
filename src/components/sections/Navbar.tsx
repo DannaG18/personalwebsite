@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Download } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
+import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isDark, toggleTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +18,13 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { href: '#home', label: 'Inicio' },
-    { href: '#about', label: 'Sobre mí' },
-    { href: '#projects', label: 'Proyectos' },
-    { href: '#services', label: 'Servicios' },
-    { href: '#style', label: 'Estilo' },
-    { href: '#blog', label: 'Blog' },
-    { href: '#contact', label: 'Contacto' }
+    { href: '/', label: 'Inicio', isRoute: true },
+    { href: '/#about', label: 'Sobre mí', isRoute: false },
+    { href: '/#projects', label: 'Proyectos', isRoute: false },
+    { href: '/services', label: 'Servicios', isRoute: true },
+    { href: '/#style', label: 'Estilo', isRoute: false },
+    { href: '/#blog', label: 'Blog', isRoute: false },
+    { href: '/#contact', label: 'Contacto', isRoute: false }
   ];
 
   const handleDownloadCV = () => {
@@ -40,22 +42,32 @@ export const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Danna G. Álvarez R.
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {item.label}
-                </a>
+                item.isRoute ? (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -100,14 +112,25 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden bg-white/95 dark:bg-navy-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-navy-700">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-              >
-                {item.label}
-              </a>
+              item.isRoute ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                >
+                  {item.label}
+                </a>
+              )
             ))}
             <button
               onClick={handleDownloadCV}

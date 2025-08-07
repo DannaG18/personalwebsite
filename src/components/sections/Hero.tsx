@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
 
           {/* Photo */}
           <div className="relative">
-            <div className="relative w-80 h-80 mx-auto">
+            <div className="relative w-80 h-100 mx-auto">
               {/* Decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full opacity-60 blur-sm"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full opacity-40 blur-sm"></div>
@@ -75,12 +75,12 @@ export const Hero: React.FC = () => {
                 {/* Placeholder for actual photo */}
                 <div className="w-full h-full bg-gradient-to-br from-blue-300 to-indigo-300 dark:from-blue-800 to-indigo-800 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <Code className="w-16 h-16 text-white" />
+                    <div className="w-62 h-62 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <img src="public/me.jpg" alt="Danna Alvarez" className="rounded object-cover"/>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Danna Álvarez
-                    </p>
+                    {/* <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      Danna Alvarez
+                    </p> */}
                   </div>
                 </div>
               </div>

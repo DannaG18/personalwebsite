@@ -1,28 +1,96 @@
-import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Projects } from './components/Projects';
-import { Services } from './components/Services';
-import { StyleBrand } from './components/StyleBrand';
-import { Blog } from './components/Blog';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+import { Routes, Route } from 'react-router-dom';
+import { Navbar } from './components/sections/Navbar';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
+import { Projects } from './components/sections/Projects';
+// import { Services } from './components/sections/Services';
+import { StyleBrand } from './components/sections/StyleBrand';
+import { Blog } from './components/sections/Blog';
+import { Contact } from './components/sections/Contact';
+import { Footer } from './components/sections/Footer';
+import FloatingCardsCarousel from './components/common/FloatingCardsCarousel/FloatingCardsCarousel.tsx';
+import { sampleCards } from './components/common/FloatingCardsCarousel/data/sampleCards.tsx';
+import { useWindowSize } from './components/common/FloatingCardsCarousel/hooks/useWindowSize.tsx';
+import { RestaurantsServices } from './components/sections/services/RestaurantsServices';
+import { Services } from './components/sections/Services.tsx';
+import { OnlineStoresServices } from './components/sections/services/OnlineStoresServices';
+import { MedicalCentersServices } from './components/sections/services/MedicalCentersServices';
+// import { PersonalBrandServices } from './components/sections/services/PersonalBrandServices';
+// import { WebBrandDesignServices } from './components/sections/services/WebBrandDesignServices';
 
 function App() {
+  const { width } = useWindowSize();
+
+  // Calculate responsive dimensions
+  const getResponsiveDimensions = () => {
+    if (width < 375) { // Very small mobile devices (iPhone SE, small Android)
+      return {
+        radius: 100,
+        cardWidth: 140,
+        cardHeight: 220,
+        rotationSpeed: 10
+      };
+    } else if (width < 640) { // Standard mobile devices
+      return {
+        radius: 130,
+        cardWidth: 160,
+        cardHeight: 250,
+        rotationSpeed: 12
+      };
+    } else if (width < 1024) { // Tablet
+      return {
+        radius: 280,
+        cardWidth: 240,
+        cardHeight: 320,
+        rotationSpeed: 15
+      };
+    } else { // Desktop
+      return {
+        radius: 400,
+        cardWidth: 280,
+        cardHeight: 380,
+        rotationSpeed: 18
+      };
+    }
+  };
+
+  const { radius, cardWidth, cardHeight, rotationSpeed } = getResponsiveDimensions();
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 dark:from-navy-950 dark:via-indigo-950 dark:to-purple-950 transition-colors duration-300">
         <Navbar />
-        <Hero />
-        <About />
-        <Projects />
-        <Services />
-        <StyleBrand />
-        <Blog />
-        <Contact />
-        <Footer />
+        <Routes>
+          {/* Página principal */}
+          <Route path="/" element={
+            <>
+              <Hero />
+              <About />
+              <Projects />
+              <FloatingCardsCarousel
+                cards={sampleCards}
+                autoRotate={true}
+                rotationSpeed={rotationSpeed}
+                radius={radius}
+                cardWidth={cardWidth}
+                cardHeight={cardHeight}
+                className="mb-8 sm:mb-12 md:mb-20"
+              />
+              <StyleBrand />
+              <Blog />
+              <Contact />
+            </>
+          } />
+                    {/* Página principal de servicios */}
+          <Route path="/services" element={<Services />} />
+                    {/* Páginas detalladas de servicios */}
+          <Route path="/services/restaurants" element={<RestaurantsServices />} />
+          <Route path="/services/stores" element={<OnlineStoresServices />} />
+          <Route path="/services/medical" element={<MedicalCentersServices />} />
+          {/* <Route path="/services/personal-brand" element={<PersonalBrandServices />} />
+          <Route path="/services/web-brand" element={<WebBrandDesignServices />} /> */}
+        </Routes>
+          <Footer />
       </div>
     </ThemeProvider>
   );

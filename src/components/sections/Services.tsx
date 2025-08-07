@@ -1,48 +1,94 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ServiceCard } from './ServiceCard';
 import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette } from 'lucide-react';
-import { RestaurantsServices } from './services/RestaurantsServices';
-import { ClothingStoresServices } from './services/ClothingStoresServices';
-import { MedicalCentersServices } from './services/MedicalCentersServices';
-import { PersonalBrandServices } from './services/PersonalBrandServices';
-import { WebBrandDesignServices } from './services/WebBrandDesignServices';
 
 export const Services: React.FC = () => {
   const serviceCategories = [
     {
       title: "Restaurantes y Cafeterías",
-      description: "Soluciones digitales que aumentan tus ventas y mejoran la experiencia de tus clientes",
+      description: "Atrae más clientes hambrientos con un sitio web que muestre tu deliciosa comida y facilite pedidos online",
+      shortBenefit: "Hasta 40% más pedidos con delivery digital",
       icon: <UtensilsCrossed className="w-8 h-8" />,
-      linkTo: "restaurants-services",
-      gradient: "from-blue-600 to-indigo-600"
+      linkTo: "/services/restaurants",
+      gradient: "from-blue-600 to-indigo-600",
+      callToActionText: "Ver soluciones gastronómicas",
+      priceRange: "$800K - $2.2M COP",
+      features: [
+        "Menú digital interactivo",
+        "Sistema de pedidos WhatsApp",
+        "Galería de platos profesional",
+        "Integración con delivery",
+        "Reservas online automáticas"
+      ]
     },
     {
       title: "Tiendas de Ropa",
-      description: "Impulsa tus ventas online con soluciones diseñadas para el sector moda",
+      description: "Convierte visitantes en compradores con una tienda online que vende mientras duermes",
+      shortBenefit: "Ventas 24/7 sin límites geográficos",
       icon: <ShoppingBag className="w-8 h-8" />,
-      linkTo: "clothing-services",
-      gradient: "from-indigo-600 to-purple-600"
+      linkTo: "/services/clothing",
+      gradient: "from-indigo-600 to-purple-600",
+      callToActionText: "Explorar tienda online",
+      priceRange: "$900K - $3.5M COP",
+      features: [
+        "Catálogo de productos completo",
+        "Carrito de compras optimizado",
+        "Pasarela de pagos segura",
+        "Gestión de inventario",
+        "Marketing por WhatsApp"
+      ]
     },
     {
       title: "Centros Médicos y Odontologías",
-      description: "Genera confianza y facilita el acceso a tus servicios médicos",
+      description: "Inspira confianza profesional y facilita que nuevos pacientes te encuentren y agenden citas",
+      shortBenefit: "Más pacientes con citas automatizadas",
       icon: <Stethoscope className="w-8 h-8" />,
-      linkTo: "medical-services",
-      gradient: "from-purple-600 to-blue-600"
+      linkTo: "/services/medical",
+      gradient: "from-purple-600 to-blue-600",
+      callToActionText: "Ver soluciones médicas",
+      priceRange: "$1.1M - $2.8M COP",
+      features: [
+        "Sistema de citas online",
+        "Perfiles médicos profesionales",
+        "Testimonios de pacientes",
+        "Información de servicios",
+        "Formularios de contacto"
+      ]
     },
     {
       title: "Marca Personal y Portafolios",
-      description: "Construye tu presencia digital profesional y atrae mejores oportunidades",
+      description: "Destaca entre la competencia con un portafolio que abra puertas a mejores oportunidades",
+      shortBenefit: "Atrae clientes premium y proyectos mejor pagados",
       icon: <User className="w-8 h-8" />,
-      linkTo: "personal-brand-services",
-      gradient: "from-blue-700 to-indigo-700"
+      linkTo: "/services/personal-brand",
+      gradient: "from-blue-700 to-indigo-700",
+      callToActionText: "Construir mi marca",
+      priceRange: "$600K - $1.8M COP",
+      features: [
+        "Portafolio visual impactante",
+        "CV descargable profesional",
+        "Casos de estudio detallados",
+        "Testimonios de clientes",
+        "Blog integrado"
+      ]
     },
     {
       title: "Diseño de Marca Web",
-      description: "Crea una identidad visual sólida que conecte con tu audiencia",
+      description: "Diferénciate con una identidad visual memorable que conecte emocionalmente con tus clientes",
+      shortBenefit: "Marca reconocible que genera confianza",
       icon: <Palette className="w-8 h-8" />,
-      linkTo: "web-brand-services",
-      gradient: "from-indigo-700 to-purple-700"
+      linkTo: "/services/web-brand",
+      gradient: "from-indigo-700 to-purple-700",
+      callToActionText: "Crear mi identidad",
+      priceRange: "$1.8M - $2.5M COP",
+      features: [
+        "Logo profesional único",
+        "Paleta de colores estratégica",
+        "Manual de marca completo",
+        "Aplicaciones digitales",
+        "Landing page inicial"
+      ]
     }
   ];
 
@@ -94,30 +140,15 @@ export const Services: React.FC = () => {
               key={index}
               title={category.title}
               description={category.description}
+            //   shortBenefit={category.shortBenefit}
               icon={category.icon}
               linkTo={category.linkTo}
               gradient={category.gradient}
+            //   callToActionText={category.callToActionText}
+            //   priceRange={category.priceRange}
+            //   features={category.features}
             />
           ))}
-        </div>
-
-        {/* Detailed Services Sections (Hidden by default, shown when clicked) */}
-        <div className="space-y-20">
-          <div id="restaurants-services">
-            <RestaurantsServices />
-          </div>
-          <div id="clothing-services">
-            <ClothingStoresServices />
-          </div>
-          <div id="medical-services">
-            <MedicalCentersServices />
-          </div>
-          <div id="personal-brand-services">
-            <PersonalBrandServices />
-          </div>
-          <div id="web-brand-services">
-            <WebBrandDesignServices />
-          </div>
         </div>
 
         {/* Process */}
