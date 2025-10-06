@@ -22,11 +22,11 @@ export const Hero: React.FC = () => {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
                 Hago crecer tu
-                <span className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 bg-clip-text text-transparent"> PyME </span>
+                <span className="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 bg-clip-text text-transparent"> EMPRESA </span>
                 con sitios web que venden
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0">
-                Soy Danna, desarrolladora especializada en crear sitios web que convierten visitantes en clientes. 
+                Soy Danna Alvarez y creo sitios web que convierten visitantes en clientes.
                 Ayudo a emprendedores como tú a multiplicar sus ventas online.
               </p>
             </div>
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200 dark:border-navy-700">
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-gray-900 dark:text-white">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Proyectos completados</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Proyectos creados</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className="text-2xl font-bold text-gray-900 dark:text-white">100%</div>
@@ -69,18 +69,16 @@ export const Hero: React.FC = () => {
               {/* Decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full opacity-60 blur-sm"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full opacity-40 blur-sm"></div>
-              
+
               {/* Main photo container */}
               <div className="relative w-full h-full bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl overflow-hidden shadow-2xl">
                 {/* Placeholder for actual photo */}
-                <div className="w-full h-full bg-gradient-to-br from-blue-300 to-indigo-300 dark:from-blue-800 to-indigo-800 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-62 h-62 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <img src="public/me.jpg" alt="Danna Alvarez" className="rounded object-cover"/>
-                    </div>
-                    {/* <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Danna Alvarez
-                    </p> */}
+                <div className="text-center">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src="me.jpg"
+                      alt="Danna Alvarez"
+                      className="w-full h-[500px] object-cover" />
                   </div>
                 </div>
               </div>

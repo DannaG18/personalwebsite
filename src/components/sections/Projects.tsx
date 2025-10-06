@@ -14,6 +14,33 @@ export const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
+      title: "Gabriela Ortiz - Consultora de Imagen",
+      category: "portfolio",
+      description: "Desarollo y branding de un portafolio de servicios de diseñadora de modas e influencer Colombiana",
+      image: "gabriela-portfolio.png",
+      technologies: ["TypeScript", "Git", "React", "Conexión con Mail", "Conexión con WhatsApp", "Branding de Marca",],
+      role: "Desarrolladora Full-Stack",
+      learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
+      results: "Presencia digital profesional y aumento de consultas de servicio",
+      liveUrl: "https://gabriela-go.netlify.app/",
+      githubUrl: "https://github.com/DannaG18/go_website",
+      // featured: true,
+    }, 
+    {
+      id: 2,
+      title: "Portfolio Personal",
+      category: "web",
+      description: "Sitio web personal que muestra mis habilidades y proyectos de desarrollo",
+      image: "personal-portfolio.png  ",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+      role: "Desarrolladora Full Stack",
+      learnings: "Diseño responsive y optimización de rendimiento",
+      results: "Sitio web profesional que destaca mis habilidades técnicas",
+      liveUrl: "https://dgportfolio-one.vercel.app",
+      githubUrl: "https://github.com/danna/portfolio"
+    },
+    {
+      id: 3,
       title: "Plataforma de Cursos Breakline",
       category: "web",
       description: "Desarrollo front-end de plataforma educativa con Angular, enfocada en experiencia de usuario fluida",
@@ -24,10 +51,10 @@ export const Projects: React.FC = () => {
       results: "Interfaz adaptable que mejoró la usabilidad y experiencia del usuario",
       liveUrl: "https://breakline-demo.com",
       githubUrl: "https://github.com/danna/breakline",
-      featured: true
+      featured: false
     },
     {
-      id: 2,
+      id: 4,
       title: "PrestService - Plataforma Full Stack",
       category: "web",
       description: "Plataforma de administración segura desarrollada con Java, Spring Boot, React y MySQL",
@@ -40,7 +67,7 @@ export const Projects: React.FC = () => {
       githubUrl: "https://github.com/danna/prestservice"
     },
     {
-      id: 3,
+      id: 5,
       title: "Sistema de Ventas de Electricidad",
       category: "web",
       description: "Aplicación de escritorio Java con arquitectura hexagonal para seguimiento de ventas",
@@ -53,20 +80,7 @@ export const Projects: React.FC = () => {
       githubUrl: "https://github.com/danna/ventas-electricidad"
     },
     {
-      id: 4,
-      title: "Portfolio Personal",
-      category: "web",
-      description: "Sitio web personal que muestra mis habilidades y proyectos de desarrollo",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
-      role: "Desarrolladora Full Stack",
-      learnings: "Diseño responsive y optimización de rendimiento",
-      results: "Sitio web profesional que destaca mis habilidades técnicas",
-      liveUrl: "https://dgportfolio-one.vercel.app",
-      githubUrl: "https://github.com/danna/portfolio"
-    },
-    {
-      id: 5,
+      id: 6,
       title: "Proyectos de Aprendizaje",
       category: "web",
       description: "Diversos proyectos desarrollados durante mi formación técnica y certificaciones",
@@ -78,23 +92,23 @@ export const Projects: React.FC = () => {
       liveUrl: "https://proyectos-aprendizaje-demo.com",
       githubUrl: "https://github.com/danna/proyectos-aprendizaje"
     },
-    {
-      id: 6,
-      title: "Liderazgo Estudiantil",
-      category: "portfolio",
-      description: "Lideré grupos de aprendizaje y mentoría para desarrolladores júnior",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
-      technologies: ["Mentoría", "Git", "Java", "Frameworks Front-end"],
-      role: "Líder Estudiantil de Tecnología",
-      learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
-      results: "Sesiones semanales exitosas de revisión de código y mentoría",
-      liveUrl: "https://liderazgo-demo.com",
-      githubUrl: "https://github.com/danna/liderazgo"
-    }
+    // {
+    //   id: 6,
+    //   title: "Liderazgo Estudiantil",
+    //   category: "portfolio",
+    //   description: "Lideré grupos de aprendizaje y mentoría para desarrolladores júnior",
+    //   image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+    //   technologies: ["Mentoría", "Git", "Java", "Frameworks Front-end"],
+    //   role: "Líder Estudiantil de Tecnología",
+    //   learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
+    //   results: "Sesiones semanales exitosas de revisión de código y mentoría",
+    //   liveUrl: "https://liderazgo-demo.com",
+    //   githubUrl: "https://github.com/danna/liderazgo"
+    // }
   ];
 
-  const filteredProjects = activeCategory === 'todos' 
-    ? projects 
+  const filteredProjects = activeCategory === 'todos'
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
   const featuredProject = projects.find(project => project.featured);
@@ -108,7 +122,7 @@ export const Projects: React.FC = () => {
             Casos de éxito empresarial
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Empresas reales que han transformado su presencia digital y multiplicado sus ventas. 
+            Empresas reales que han transformado su presencia digital y multiplicado sus ventas.
             Conoce cómo puedo ayudar a tu negocio a lograr resultados similares.
           </p>
         </div>
@@ -119,11 +133,10 @@ export const Projects: React.FC = () => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full transition-all duration-200 ${
-                activeCategory === category.id
+              className={`px-6 py-3 rounded-full transition-all duration-200 ${activeCategory === category.id
                   ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
                   : 'bg-white dark:bg-navy-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-navy-600'
-              }`}
+                }`}
             >
               {category.label}
             </button>
@@ -154,7 +167,7 @@ export const Projects: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                     {featuredProject.description}
                   </p>
-                  
+
                   <div className="space-y-4 mb-8">
                     <div>
                       <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Mi rol:</span>
@@ -240,7 +253,7 @@ export const Projects: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {project.title}
@@ -248,7 +261,7 @@ export const Projects: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
                   {project.description}
                 </p>
-                
+
                 <div className="space-y-3 mb-4">
                   <div>
                     <span className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">

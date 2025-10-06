@@ -23,17 +23,17 @@ export const About: React.FC = () => {
   const education = [
     {
       icon: <Award className="w-6 h-6" />,
-      title: "Técnico en Programación de Software",
+      title: "Técnico Laboral en Programación de Software",
       institution: "Campuslands",
-      year: "2025",
-      description: "Especialización en desarrollo full-stack con Java, Spring Boot y React"
+      year: "2024",
+      description: "Formación en desarrollo con Java, Spring Boot y React"
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: "Certificaciones Tecnológicas",
-      institution: "IBM, Microsoft",
+      institution: "IBM, Microsoft, Cisco, Udemy",
       year: "2025",
-      description: "IA de Azure, Python, POO y Fundamentos de Inteligencia Artificial"
+      description: "Certificaciones en fundamentos de IA, Ciber Security, desarrollo web y más"
     }
   ];
 
@@ -45,7 +45,7 @@ export const About: React.FC = () => {
             Sobre mí
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Hola, soy Danna y me encanta aprender cosas nuevas. Me considero una persona muy curiosa 
+            Hola, soy Danna y me encanta aprender cosas nuevas. Me considero una persona muy curiosa
             y siempre que veo un problema, busco una solución.
           </p>
         </div>
@@ -57,20 +57,20 @@ export const About: React.FC = () => {
               <Code2 className="w-6 h-6" />
               <span className="font-medium">Mi historia como desarrolladora</span>
             </div>
-            
+
             <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
-                Cada reto que enfrento es una nueva oportunidad para aprender, contribuir y construir algo significativo. 
+                Cada reto que enfrento es una nueva oportunidad para aprender, contribuir y construir algo significativo.
                 Esta mentalidad me ha llevado a convertirme en desarrolladora de software y una apasionada de la tecnología.
               </p>
               <p>
-                Me centré en lenguajes orientados a objetos y fuertemente tipados porque me desafían y me permiten 
-                crear aplicaciones robustas y bien estructuradas. Esto ha mejorado mi forma de pensar como desarrolladora, 
+                Me centré en lenguajes orientados a objetos y fuertemente tipados porque me desafían y me permiten
+                crear aplicaciones robustas y bien estructuradas. Esto ha mejorado mi forma de pensar como desarrolladora,
                 ayudándome a escribir código más limpio y a seguir las mejores prácticas.
               </p>
               <p>
-                También encuentro fuertes conexiones entre lo que hago y quién soy. Cantar ha despertado en mí una creatividad 
-                que aplico incluso al resolver problemas técnicos, y el deporte me ha enseñado a ser dinámica, constante 
+                También encuentro fuertes conexiones entre lo que hago y quién soy. Cantar ha despertado en mí una creatividad
+                que aplico incluso al resolver problemas técnicos, y el deporte me ha enseñado a ser dinámica, constante
                 y a trabajar en equipo.
               </p>
             </div>
@@ -87,7 +87,15 @@ export const About: React.FC = () => {
           </div>
 
           {/* Visual element */}
-          <div className="relative">
+          <div className="relative w-full  h-full bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative overflow-hidden">
+              <img
+                src="aboutme.jpeg"
+                alt="Danna Alvarez"
+                className="w-full h-[500px] object-cover" />
+            </div>
+          </div>
+          {/* <div className="relative">
             <div className="bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl p-8 h-96">
               <div className="h-full flex items-center justify-center">
                 <div className="text-center">
@@ -103,7 +111,7 @@ export const About: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Values */}

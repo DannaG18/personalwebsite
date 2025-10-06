@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Danna G. Álvarez R.
+              Danna Alvarez
             </Link>
           </div>
 
