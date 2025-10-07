@@ -19,7 +19,7 @@ export const useCarouselAnimation = ({
 
   const animate = useCallback((timestamp: number) => {
     if (!lastTimeRef.current) lastTimeRef.current = timestamp;
-    const deltaTime = timestamp - lastTimeRef.current;
+    // const deltaTime = timestamp - lastTimeRef.current;
 
     // if (isPlaying) {
     //   setCurrentRotation(prev => {
@@ -43,9 +43,9 @@ export const useCarouselAnimation = ({
     };
   }, [animate]);
 
-  const togglePlayPause = useCallback(() => {
-    setIsPlaying(prev => !prev);
-  }, []);
+  // const togglePlayPause = useCallback(() => {
+  //   setIsPlaying(prev => !prev);
+  // }, []);
 
   const goToCard = useCallback((index: number) => {
     const targetRotation = (360 / totalCards) * index;
@@ -66,8 +66,8 @@ export const useCarouselAnimation = ({
   return {
     currentRotation,
     activeIndex,
-    isPlaying,
-    togglePlayPause,
+    // isPlaying,
+    // togglePlayPause,
     goToCard,
     nextCard,
     prevCard

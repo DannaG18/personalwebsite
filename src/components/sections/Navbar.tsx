@@ -20,8 +20,8 @@ export const Navbar: React.FC = () => {
   const navItems = [
     { href: '/', label: 'Inicio', isRoute: true },
     { href: '/#about', label: 'Sobre mí', isRoute: false },
-    { href: '/#projects', label: 'Proyectos', isRoute: false },
     { href: '/services', label: 'Servicios', isRoute: true },
+    { href: '/#projects', label: 'Proyectos', isRoute: false },
     { href: '/#style', label: 'Estilo', isRoute: false },
     { href: '/#blog', label: 'Blog', isRoute: false },
     { href: '/#contact', label: 'Contacto', isRoute: false }

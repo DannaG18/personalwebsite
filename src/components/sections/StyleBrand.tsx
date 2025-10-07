@@ -36,7 +36,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Modern web development workspace',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800',
+      image: '',
       gradient: 'from-blue-700 to-purple-700'
     },
     {

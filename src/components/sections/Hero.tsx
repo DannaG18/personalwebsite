@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0">
                 Soy Danna Alvarez y creo sitios web que convierten visitantes en clientes.
-                Ayudo a emprendedores como tú a multiplicar sus ventas online.
+                Ayudo a emprendedores como tú a multiplicar sus ventas online
               </p>
             </div>
 
