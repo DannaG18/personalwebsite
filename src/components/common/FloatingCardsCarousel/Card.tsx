@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = ({
           )}
 
           {/* Header - Icono y título */}
-          <div className="flex items-center gap-4 mb-3 sm:mt-2">
+          <div className="flex items-center gap-4 mb-3 sm:mt-3">
             <div className={`w-16 h-16 sm:w-18 sm:h-18 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
               {icon}
             </div>
@@ -79,8 +79,8 @@ const Card: React.FC<CardProps> = ({
                 {description}
               </p>
 
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Incluye:</h4>
+              <div className="mb-2">
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-1">Incluye:</h4>
                 <ul className="space-y-1.5">
                   {features.slice(0, 3).map((feature, idx) => (
                     <li
