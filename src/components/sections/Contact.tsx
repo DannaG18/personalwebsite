@@ -1,6 +1,8 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle, Linkedin, Github, Instagram } from 'lucide-react';
 import { ContactFormData } from '../../types';
+import { Listbox } from '@headlessui/react';
+import { sampleCards } from '../common/FloatingCardsCarousel/data/sampleCards';
 
 export const Contact: React.FC = () => {
   const FORM_ENDPOINT = 'https://formspree.io/f/mrblgvzn'; // <-- Replace this
@@ -113,7 +115,7 @@ export const Contact: React.FC = () => {
             Impulsa tu negocio hoy mismo
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            ¿Listo para llevar tu empresa al siguiente nivel? Solicita una consulta gratuita 
+            ¿Listo para llevar tu empresa al siguiente nivel? Solicita una consulta gratuita
             y descubre cómo puedo ayudarte a atraer más clientes y aumentar tus ventas.
           </p>
         </div>
@@ -124,7 +126,7 @@ export const Contact: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Solicita tu consulta gratuita
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -163,21 +165,74 @@ export const Contact: React.FC = () => {
                 <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   ¿Qué necesita tu negocio?
                 </label>
-                <select
-                  id="projectType"
-                  name="projectType"
-                  value={formData.projectType}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
+                <Listbox
+                  value={selected}
+                  onChange={(value) => {
+                    setSelected(value);
+                    setFormData({
+                      ...formData,
+                      subject: value ? value.title : "", // 👈 sincroniza con formData.subject
+                    });
+                  }}
                 >
-                  <option value="web">Sitio Web Empresarial</option>
-                  <option value="ecommerce">Tienda Online</option>
-                  <option value="landing">Landing Page</option>
-                  <option value="seo">Posicionamiento SEO</option>
-                  <option value="consulting">Consultoría Digital</option>
-                  <option value="other">Otro</option>
-                </select>
-              </div>
+                  <div className="relative">
+                    {/* Botón */}
+                    <Listbox.Button
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
+                      style={{ borderColor: "#C8BAAA" }}
+                    >
+                      {selected ? selected.title : "Selecciona un servicio"}
+                    </Listbox.Button>
+
+                    {/* Opciones */}
+                    <Listbox.Options className="absolute mt-1 w-full rounded-md bg-white shadow-lg border border-gray-200 z-10">
+                      {/* Placeholder */}
+                      <Listbox.Option
+                        key="placeholder"
+                        value={null}
+                        disabled
+                        className="cursor-not-allowed px-4 py-2 text-gray-400"
+                      >
+                        Selecciona un servicio
+                      </Listbox.Option>
+
+                      {/* Servicios */}
+                      {sampleCards.map((service) => (
+                        <Listbox.Option
+                          key={service.id}
+                          value={service}
+                          className={({ active, selected }) =>
+                            `cursor-pointer px-4 py-2 ${active
+                              ? "bg-[#800020] text-white"
+                              : selected
+                                ? "bg-[#291509] text-white"
+                                : "text-gray-800"
+                            }`
+                          }
+                        >
+                          {service.title}
+                        </Listbox.Option>
+                      ))}
+
+                      {/* Opción Otro */}
+                      <Listbox.Option
+                        key="otro"
+                        value={{ id: "otro", title: "Otro" }}
+                        className={({ active, selected }) =>
+                          `cursor-pointer px-4 py-2 ${active
+                            ? "bg-[#800020] text-white"
+                            : selected
+                              ? "bg-[#800020] text-white"
+                              : "text-gray-800"
+                          }`
+                        }
+                      >
+                        Otro
+                      </Listbox.Option>
+                    </Listbox.Options>
+                  </div>
+                </Listbox>
+              </div>  
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -228,7 +283,7 @@ export const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Contacto directo
               </h3>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -262,7 +317,7 @@ export const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Conecta conmigo
               </h3>
-              
+
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -276,7 +331,7 @@ export const Contact: React.FC = () => {
                   </a>
                 ))}
               </div>
-              
+
               <p className="text-gray-600 dark:text-gray-300 text-sm mt-4">
                 Comparto casos de éxito, tips de marketing digital y estrategias para hacer crecer tu negocio.
               </p>
@@ -288,7 +343,7 @@ export const Contact: React.FC = () => {
                 ¿Tienes una pregunta urgente?
               </h3>
               <p className="text-blue-100 mb-6">
-                Para consultas urgentes sobre tu proyecto o si necesitas una cotización rápida, 
+                Para consultas urgentes sobre tu proyecto o si necesitas una cotización rápida,
                 escríbeme por WhatsApp.
               </p>
               <a
@@ -307,7 +362,7 @@ export const Contact: React.FC = () => {
         {/* Response Time */}
         <div className="text-center mt-12 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
           <p className="text-blue-800 dark:text-blue-300">
-            <strong>Garantía de respuesta:</strong> Te respondo en menos de 24 horas con una propuesta inicial. 
+            <strong>Garantía de respuesta:</strong> Te respondo en menos de 24 horas con una propuesta inicial.
             Para consultas urgentes, WhatsApp es la vía más rápida.
           </p>
         </div>
