@@ -12,7 +12,8 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Developer working on code',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800',
+      image: 'grid6.jpeg',
+      // image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800',
       gradient: 'from-indigo-600 to-purple-600'
     },
     {
@@ -24,8 +25,8 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Team collaboration in software development',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800',
-      gradient: 'from-blue-600 to-indigo-600'
+      image: 'grid9.jpeg',
+      // gradient: 'from-blue-600 to-indigo-600'  
     },
     {
       type: 'quote',
@@ -36,7 +37,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Modern web development workspace',
-      image: '',
+      image: 'me2.jpeg',
       gradient: 'from-blue-700 to-purple-700'
     },
     {
@@ -48,7 +49,8 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Clean code and best practices',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
+      image: 'me-book.jpeg',
+      // image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
       gradient: 'from-indigo-700 to-blue-700'
     },
     {
@@ -60,7 +62,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Learning and growth mindset',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800',
+      image: 'grid1.jpeg',
       gradient: 'from-indigo-800 to-purple-800'
     },
     {
@@ -72,7 +74,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Technology transforming lives',
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800',
+      image: 'grid2.jpeg',
       gradient: 'from-blue-900 to-indigo-900'
     }
   ];

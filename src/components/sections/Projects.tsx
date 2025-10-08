@@ -24,7 +24,7 @@ export const Projects: React.FC = () => {
       results: "Presencia digital profesional y aumento de consultas de servicio",
       liveUrl: "https://gabriela-go.netlify.app/",
       githubUrl: "https://github.com/DannaG18/go_website",
-      // featured: true,
+      featured: true,
     }, 
     {
       id: 2,
@@ -37,74 +37,74 @@ export const Projects: React.FC = () => {
       learnings: "Diseño responsive y optimización de rendimiento",
       results: "Sitio web profesional que destaca mis habilidades técnicas",
       liveUrl: "https://dgportfolio-one.vercel.app",
-      githubUrl: "https://github.com/danna/portfolio"
+      githubUrl: "https://github.com/DannaG18/dgportfolio",
     },
     {
       id: 3,
-      title: "Plataforma de Cursos Breakline",
+      title: "Web Site Hamburguesas",
       category: "web",
-      description: "Desarrollo front-end de plataforma educativa con Angular, enfocada en experiencia de usuario fluida",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800",
-      technologies: ["Angular", "TypeScript", "Git", "API Integration"],
-      role: "Desarrolladora Front-end",
-      learnings: "Integración de componentes con servicios backend y sistema de autenticación seguro",
-      results: "Interfaz adaptable que mejoró la usabilidad y experiencia del usuario",
-      liveUrl: "https://breakline-demo.com",
-      githubUrl: "https://github.com/danna/breakline",
-      featured: false
+      description: "Sitio web para mostrar productos de comida rápida, principalmente hamburguesas",
+      image: "1.png",
+      technologies: ["JavaScript", "HTML", "CSS", "Git"],
+      role: "Líder Estudiantil de Tecnología",
+      learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
+      results: "Página atractiva y responsiva que mejoró la imagen del negocio",
+      liveUrl: "https://dannag18.github.io/Burger-Mission/",
+      githubUrl: "https://github.com/DannaG18/Burger-Mission"
     },
+    {
+      id: 4,
+      title: "Landing Pages - Proyectos Personales",
+      category: "web",
+      description: "Diversas landing pages desarrolladas durante mi formación como desarrolladora web",
+      image: "3.png",
+      technologies: ["HTML","CSS", "Responsive Design", "Git"],
+      role: "Estudiante Desarrolladora",
+      learnings: "Fundamentos sólidos en programación orientada a objetos y desarrollo web",
+      results: "Base técnica sólida para proyectos empresariales",
+      liveUrl: "https://dannag18.github.io/landingpagess/landingpages-main/index.html",
+      githubUrl: "https://github.com/DannaG18/landingpagess"
+    },
+    // {
+    //   id: 3,
+    //   title: "Plataforma de Cursos Breakline",
+    //   category: "web",
+    //   description: "Desarrollo front-end de plataforma educativa con Angular, enfocada en experiencia de usuario fluida",
+    //   image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800",
+    //   technologies: ["Angular", "TypeScript", "Git", "API Integration"],
+    //   role: "Desarrolladora Front-end",
+    //   learnings: "Integración de componentes con servicios backend y sistema de autenticación seguro",
+    //   results: "Interfaz adaptable que mejoró la usabilidad y experiencia del usuario",
+    //   liveUrl: "https://breakline-demo.com",
+    //   githubUrl: "https://github.com/danna/breakline",
+    //   featured: false
+    // },
     {
       id: 4,
       title: "PrestService - Plataforma Full Stack",
       category: "web",
       description: "Plataforma de administración segura desarrollada con Java, Spring Boot, React y MySQL",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      image: "6.png",
       technologies: ["Java", "Spring Boot", "React", "MySQL", "Firebase"],
       role: "Desarrolladora Full Stack",
       learnings: "Implementación de CRUD, autenticación JWT y principios SOLID",
       results: "Sistema robusto con componentes reutilizables y código limpio",
-      liveUrl: "https://prestservice-demo.com",
-      githubUrl: "https://github.com/danna/prestservice"
+      liveUrl: "https://github.com/DannaG18/Service-Companies",
+      githubUrl: "https://github.com/DannaG18/Service-Companies"
     },
     {
       id: 5,
       title: "Sistema de Ventas de Electricidad",
       category: "web",
       description: "Aplicación de escritorio Java con arquitectura hexagonal para seguimiento de ventas",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      image: "4.png",
       technologies: ["Java", "Swing", "Arquitectura Hexagonal", "MySQL"],
       role: "Desarrolladora Backend",
       learnings: "Diseño de interfaces intuitivas y gestión de roles de usuario",
       results: "Interfaz optimizada que minimizó errores operacionales",
-      liveUrl: "https://ventas-electricidad-demo.com",
-      githubUrl: "https://github.com/danna/ventas-electricidad"
+      liveUrl: "https://github.com/DannaG18/Electrical-Sales-Management",
+      githubUrl: "https://github.com/DannaG18/Electrical-Sales-Management"
     },
-    {
-      id: 6,
-      title: "Proyectos de Aprendizaje",
-      category: "web",
-      description: "Diversos proyectos desarrollados durante mi formación técnica y certificaciones",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-      technologies: ["Python", "Flask", "Django", "JavaScript", "HTML/CSS"],
-      role: "Estudiante Desarrolladora",
-      learnings: "Fundamentos sólidos en programación orientada a objetos y desarrollo web",
-      results: "Base técnica sólida para proyectos empresariales",
-      liveUrl: "https://proyectos-aprendizaje-demo.com",
-      githubUrl: "https://github.com/danna/proyectos-aprendizaje"
-    },
-    // {
-    //   id: 6,
-    //   title: "Liderazgo Estudiantil",
-    //   category: "portfolio",
-    //   description: "Lideré grupos de aprendizaje y mentoría para desarrolladores júnior",
-    //   image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
-    //   technologies: ["Mentoría", "Git", "Java", "Frameworks Front-end"],
-    //   role: "Líder Estudiantil de Tecnología",
-    //   learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
-    //   results: "Sesiones semanales exitosas de revisión de código y mentoría",
-    //   liveUrl: "https://liderazgo-demo.com",
-    //   githubUrl: "https://github.com/danna/liderazgo"
-    // }
   ];
 
   const filteredProjects = activeCategory === 'todos'
@@ -287,10 +287,10 @@ export const Projects: React.FC = () => {
                   )}
                 </div>
 
-                <button className="flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors duration-200 group">
+                {/* <button className="flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors duration-200 group">
                   Ver caso completo
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
