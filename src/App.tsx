@@ -1,23 +1,21 @@
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Routes, Route } from 'react-router-dom';
-import { Navbar } from './components/sections/Navbar';
+import { Navbar } from './components/common/Navbar.tsx';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Projects } from './components/sections/Projects';
-// import { Services } from './components/sections/Services';
 import { StyleBrand } from './components/sections/StyleBrand';
 import { Blog } from './components/sections/Blog';
 import { Contact } from './components/sections/Contact';
-import { Footer } from './components/sections/Footer';
+import { Footer } from './components/common/Footer.tsx';
 import FloatingCardsCarousel from './components/common/FloatingCardsCarousel/FloatingCardsCarousel.tsx';
 import { sampleCards } from './components/common/FloatingCardsCarousel/data/sampleCards.tsx';
-// import { useWindowSize } from './components/common/FloatingCardsCarousel/hooks/useWindowSize.tsx';
-import { RestaurantsServices } from './components/sections/services/RestaurantsServices';
+import { RestaurantsServices } from './pages/services/RestaurantsServices.tsx';
 import { Services } from './components/sections/Services.tsx';
-import { OnlineStoresServices } from './components/sections/services/OnlineStoresServices';
-import { MedicalCentersServices } from './components/sections/services/MedicalCentersServices';
-// import { PersonalBrandServices } from './components/sections/services/PersonalBrandServices';
-// import { WebBrandDesignServices } from './components/sections/services/WebBrandDesignServices';
+import { OnlineStoresServices } from './pages/services/OnlineStoresServices.tsx';
+import { MedicalCentersServices } from './pages/services/MedicalCentersServices.tsx';
+import { WebBrandDesignServices } from './pages/services/WebBrandDesignServices.tsx';
+import { PersonalBrandServices } from './pages/services/PersonalBrandServices.tsx';
 
 function App() {
   // const { width } = useWindowSize();
@@ -87,8 +85,8 @@ function App() {
           <Route path="/services/restaurants" element={<RestaurantsServices />} />
           <Route path="/services/stores" element={<OnlineStoresServices />} />
           <Route path="/services/medical" element={<MedicalCentersServices />} />
-          {/* <Route path="/services/personal-brand" element={<PersonalBrandServices />} />
-          <Route path="/services/web-brand" element={<WebBrandDesignServices />} /> */}
+          <Route path="/services/personal-brand" element={<PersonalBrandServices />} />
+          <Route path="/services/web-brand" element={<WebBrandDesignServices />} />
         </Routes>
         <Footer />
       </div>

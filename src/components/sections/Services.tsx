@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ServiceCard } from './ServiceCard';
+import { ServiceCard } from '../common/ServiceCard';
 import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette } from 'lucide-react';
 
 export const Services: React.FC = () => {

@@ -1,15 +1,15 @@
 import React from 'react';
 import { ArrowRight, Star, TrendingUp } from 'lucide-react';
-import { CardData } from './types';
+// import { CardData } from './types';
 import {CardProps} from './types';
 
 const Card: React.FC<CardProps> = ({
   card,
-  index,
-  totalCards,
-  currentRotation,
-  cardWidth,
-  cardHeight,
+  // index,
+  // totalCards,
+  // currentRotation,
+  // cardWidth,
+  // cardHeight,
   isActive,
   onClick,
   displayMode = 'carousel'
@@ -19,6 +19,7 @@ const Card: React.FC<CardProps> = ({
     description,
     shortBenefit,
     icon,
+    linkTo,
     gradient,
     callToActionText,
     priceRange,
@@ -38,7 +39,7 @@ const Card: React.FC<CardProps> = ({
           cursor-pointer flex flex-col
           w-full max-w-md mx-auto
           h-auto min-h-[600px]
-          sm:min-h-[620px]
+          sm:min-h-[600px]
           lg:w-[360px] lg:h-[580px] lg:min-h-0
         `}
       >
@@ -112,12 +113,15 @@ const Card: React.FC<CardProps> = ({
                 </div>
               </div>
 
-              <button
+              <a
+                href={linkTo}
+                target=""
+                rel="noopener noreferrer"
                 className={`w-full flex items-center justify-center gap-2 sm:gap-2 px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r ${gradient} text-white rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 group/button text-sm sm:text-base`}
               >
                 <span>{callToActionText}</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover/button:translate-x-1 transition-transform duration-300" />
-              </button>
+              </a>
 
               <div className="text-center">
                 <p className="text-xxs sm:text-xs text-gray-500 dark:text-gray-400">
@@ -135,57 +139,57 @@ const Card: React.FC<CardProps> = ({
   }
 
   // Modo carrusel 3D (para las tarjetas de fondo)
-  const spacingMultiplier = 2.1;
-  const angle = (360 / (totalCards * spacingMultiplier)) * index;
-  const rotateY = angle - currentRotation;
-  const dynamicRadius = Math.max(250, 1000 / totalCards);
-  const translateZ = dynamicRadius;
+//   const spacingMultiplier = 2.1;
+//   const angle = (360 / (totalCards * spacingMultiplier)) * index;
+//   const rotateY = angle - currentRotation;
+//   const dynamicRadius = Math.max(250, 1000 / totalCards);
+//   const translateZ = dynamicRadius;
 
-  const normalizedRotation = ((rotateY % 360) + 360) % 360;
+//   const normalizedRotation = ((rotateY % 360) + 360) % 360;
 
-  let opacity = 0.3;
-  if (normalizedRotation > 120 && normalizedRotation < 240) {
-    opacity = 0.1 + 0.2 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
-  }
+//   let opacity = 0.3;
+//   if (normalizedRotation > 120 && normalizedRotation < 240) {
+//     opacity = 0.1 + 0.2 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
+//   }
 
-  let scale = 0.6;
-  if (normalizedRotation > 40 && normalizedRotation < 270) {
-    scale = 0.5 + 0.1 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
-  }
+//   let scale = 0.6;
+//   if (normalizedRotation > 40 && normalizedRotation < 270) {
+//     scale = 0.5 + 0.1 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
+//   }
 
-  const cardStyle: React.CSSProperties = {
-    position: 'absolute',
-    width: `${cardWidth}px`,
-    height: `${cardHeight}px`,
-    left: '50%',
-    top: '30%',
-    marginLeft: `-${cardWidth / 2}px`,
-    marginTop: `-${cardHeight / 2}px`,
-    transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px) scale(${scale})`,
-    opacity,
-    transition: 'transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.4s ease',
-    cursor: 'pointer',
-    transformStyle: 'preserve-3d',
-    willChange: 'transform, opacity',
-    pointerEvents: 'none'
-  };
+//   const cardStyle: React.CSSProperties = {
+//     position: 'absolute',
+//     width: `${cardWidth}px`,
+//     height: `${cardHeight}px`,
+//     left: '50%',
+//     top: '30%',
+//     marginLeft: `-${cardWidth / 2}px`,
+//     marginTop: `-${cardHeight / 2}px`,
+//     transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px) scale(${scale})`,
+//     opacity,
+//     transition: 'transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.4s ease',
+//     cursor: 'pointer',
+//     transformStyle: 'preserve-3d',
+//     willChange: 'transform, opacity',
+//     pointerEvents: 'none'
+//   };
 
-  return (
-    <div
-      style={cardStyle}
-      className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 shadow-lg"
-    >
-      <div className="relative z-10 p-6 h-full flex flex-col justify-between">
-        <div className="relative z-10">
-          <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-xl mb-4 flex items-center justify-center text-white shadow-lg`}>
-            {icon}
-          </div>
-          <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-          <p className="text-white/70 text-sm leading-relaxed line-clamp-3">{description}</p>
-        </div>
-      </div>
-    </div>
-  );
+//   return (
+//     <div
+//       style={cardStyle}
+//       className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 shadow-lg"
+//     >
+//       <div className="relative z-10 p-6 h-full flex flex-col justify-between">
+//         <div className="relative z-10">
+//           <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-xl mb-4 flex items-center justify-center text-white shadow-lg`}>
+//             {icon}
+//           </div>
+//           <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
+//           <p className="text-white/70 text-sm leading-relaxed line-clamp-3">{description}</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
 };
 
 export default Card;

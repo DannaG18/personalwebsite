@@ -104,7 +104,7 @@ const FloatingCardsCarousel: React.FC<FloatingCardsCarouselProps> = ({
 
           {/* Carrusel 3D de fondo - Hidden on mobile and tablet */}
           <div style={containerStyle} className="hidden lg:block absolute inset-0 pointer-events-none">
-            {/* <div style={carouselStyle}>
+            <div style={carouselStyle}>
               {cards.map((card, index) => (
                 <Card
                   key={`bg-${card.id}`}
@@ -120,7 +120,7 @@ const FloatingCardsCarousel: React.FC<FloatingCardsCarouselProps> = ({
                   displayMode="carousel"
                 />
               ))}
-            </div> */}
+            </div>
           </div>
 
           {/* Contenedor con botones a los lados - Desktop */}

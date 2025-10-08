@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Stethoscope, 
@@ -20,142 +19,142 @@ export const MedicalCentersServices: React.FC = () => {
     {
       id: 1,
       icon: <Stethoscope className="w-12 h-12" />,
-      title: "Web Institucional con Agendamiento",
-      shortDescription: "Sitio web profesional que inspire confianza y permita a pacientes agendar citas online.",
-      longDescription: "Una solución web completa que transforma la experiencia de tus pacientes y optimiza la gestión de tu centro médico. Incluye sistema de citas automatizado, información detallada de servicios médicos y una presencia digital que inspira confianza profesional desde el primer contacto.",
-      image: "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Web Premium con Galería de Resultados",
+      shortDescription: "Sitio web elegante que muestre tus mejores casos y permita agendar tratamientos estéticos online.",
+      longDescription: "Una solución web premium diseñada específicamente para clínicas estéticas y odontologías que quieren atraer pacientes de alto valor. Incluye galería profesional de antes/después, sistema de citas para tratamientos, y una presencia digital que transmite lujo y profesionalismo desde el primer contacto.",
+      image: "https://images.pexels.com/photos/3845457/pexels-photo-3845457.jpeg?auto=compress&cs=tinysrgb&w=800",
       benefits: [
         {
           icon: <Calendar className="w-6 h-6" />,
-          title: "Citas Automatizadas",
-          description: "Reduce llamadas telefónicas hasta un 70% con sistema de agendamiento online"
+          title: "Citas para Tratamientos Premium",
+          description: "Sistema especializado para agendar consultas estéticas y tratamientos de alto valor"
         },
         {
           icon: <Shield className="w-6 h-6" />,
-          title: "Genera Confianza",
-          description: "Presencia profesional que tranquiliza a pacientes antes de la consulta"
+          title: "Transmite Lujo y Confianza",
+          description: "Diseño premium que atrae pacientes dispuestos a invertir en tratamientos de calidad"
         },
         {
           icon: <TrendingUp className="w-6 h-6" />,
-          title: "Más Pacientes Nuevos",
-          description: "Atrae pacientes que buscan servicios médicos online en tu zona"
+          title: "Pacientes de Mayor Valor",
+          description: "Atrae clientes interesados en tratamientos estéticos y procedimientos premium"
         }
       ],
       features: [
-        "Sistema de citas online con calendario integrado",
-        "Perfiles detallados del equipo médico",
-        "Información completa de servicios y especialidades",
-        "Formularios de contacto seguros",
+        "Galería profesional de antes y después",
+        "Sistema de citas para tratamientos estéticos",
+        "Perfiles de especialistas con certificaciones",
+        "Información detallada de procedimientos",
         "Integración con WhatsApp Business",
-        "Testimonios y reseñas de pacientes",
-        "Certificaciones y acreditaciones destacadas",
+        "Testimonios reales con fotos de resultados",
+        "Certificaciones y acreditaciones estéticas",
         "Optimización para búsquedas locales (SEO)",
         "Diseño responsive para móviles",
-        "Cumplimiento de normativas de salud"
+        "Diseño premium que transmite confianza"
       ],
       price: "Desde $2,800,000 COP",
-      ctaText: "Solicitar Web Institucional",
+      ctaText: "Solicitar Web Premium",
       featured: true
     },
     {
       id: 2,
       icon: <Heart className="w-12 h-12" />,
-      title: "Landing Page de Servicios Especializados",
-      shortDescription: "Página especializada para promocionar tratamientos específicos y generar leads calificados.",
-      longDescription: "Una landing page de alta conversión diseñada para promocionar servicios médicos específicos como odontología estética, cirugías, tratamientos especializados o programas de salud. Perfecta para campañas dirigidas y generación de pacientes interesados en servicios premium.",
-      image: "https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Landing Page de Tratamiento Específico",
+      shortDescription: "Página especializada para promocionar un tratamiento estético específico y generar citas calificadas.",
+      longDescription: "Una landing page de alta conversión diseñada para promocionar tratamientos estéticos específicos como blanqueamiento dental, botox, rellenos, lifting facial, implantes dentales o cualquier procedimiento premium. Perfecta para campañas de Google Ads y redes sociales dirigidas a pacientes interesados en tratamientos de alto valor.",
+      image: "https://images.pexels.com/photos/3845457/pexels-photo-3845457.jpeg?auto=compress&cs=tinysrgb&w=800",
       benefits: [
         {
           icon: <UserCheck className="w-6 h-6" />,
-          title: "Pacientes Calificados",
-          description: "Atrae pacientes específicamente interesados en tu especialidad"
+          title: "Pacientes Interesados en el Tratamiento",
+          description: "Atrae personas específicamente interesadas en el procedimiento que promocionas"
         },
         {
           icon: <Star className="w-6 h-6" />,
-          title: "Destaca tu Expertise",
-          description: "Posiciona tu centro como líder en tratamientos especializados"
+          title: "Posiciónate como Experto",
+          description: "Demuestra tu especialización en el tratamiento específico que ofreces"
         },
         {
           icon: <TrendingUp className="w-6 h-6" />,
-          title: "Mayor Conversión",
-          description: "Diseño optimizado para convertir visitantes en consultas"
+          title: "Más Consultas Premium",
+          description: "Diseño optimizado para convertir visitantes en citas para tratamientos de alto valor"
         }
       ],
       features: [
-        "Enfoque específico en un servicio médico",
-        "Casos de éxito y testimonios reales",
-        "Galería de antes y después (cuando aplique)",
-        "Información detallada del procedimiento",
-        "Formulario de consulta especializada",
+        "Enfoque específico en un tratamiento estético",
+        "Casos de éxito con fotos de antes y después",
+        "Galería de resultados reales del tratamiento",
+        "Información detallada del procedimiento y beneficios",
+        "Formulario de consulta para el tratamiento específico",
         "Integración con campañas de Google Ads",
-        "Certificaciones y experiencia del médico",
-        "Preguntas frecuentes especializadas"
+        "Certificaciones y experiencia del especialista",
+        "Preguntas frecuentes sobre el tratamiento"
       ],
       price: "Desde $1,100,000 COP",
-      ctaText: "Solicitar Landing Especializada"
+      ctaText: "Solicitar Landing de Tratamiento"
     },
     {
       id: 3,
       icon: <Users className="w-12 h-12" />,
-      title: "Perfil Completo del Equipo Médico",
-      shortDescription: "Sección dedicada a mostrar la experiencia y credenciales de tu equipo profesional.",
-      longDescription: "Una plataforma digital que destaca la experiencia, formación y especialidades de tu equipo médico. Incluye perfiles profesionales detallados, certificaciones, áreas de expertise y testimonios de pacientes, generando confianza y credibilidad en tu centro médico.",
-      image: "https://images.pexels.com/photos/7089020/pexels-photo-7089020.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Perfiles de Especialistas Estéticos",
+      shortDescription: "Sección dedicada a mostrar la experiencia y especialización de tu equipo en tratamientos estéticos.",
+      longDescription: "Una plataforma digital que destaca la experiencia, formación especializada y casos de éxito de tu equipo en tratamientos estéticos y odontología cosmética. Incluye perfiles profesionales con certificaciones internacionales, especialidades específicas y galería de resultados, generando confianza en pacientes que buscan tratamientos premium.",
+      image: "https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=800",
       benefits: [
         {
           icon: <Shield className="w-6 h-6" />,
-          title: "Credibilidad Profesional",
-          description: "Muestra las credenciales que tranquilizan a los pacientes"
+          title: "Credibilidad en Estética",
+          description: "Muestra certificaciones internacionales y especialización en tratamientos estéticos"
         },
         {
           icon: <Users className="w-6 h-6" />,
-          title: "Conexión Humana",
-          description: "Los pacientes conocen a su médico antes de la consulta"
+          title: "Confianza Antes del Tratamiento",
+          description: "Los pacientes conocen al especialista y ven sus resultados antes de decidir"
         },
         {
           icon: <Star className="w-6 h-6" />,
-          title: "Diferenciación",
-          description: "Destaca la experiencia que te diferencia de la competencia"
+          title: "Diferenciación Premium",
+          description: "Destaca la especialización que justifica precios premium en tratamientos"
         }
       ],
       features: [
-        "Perfiles profesionales con foto y biografía",
-        "Formación académica y certificaciones",
-        "Especialidades y áreas de expertise",
-        "Años de experiencia y casos tratados",
-        "Testimonios específicos por médico",
-        "Horarios de atención por especialista",
-        "Publicaciones y reconocimientos",
+        "Perfiles con fotos profesionales y especialización",
+        "Certificaciones internacionales en estética",
+        "Especialidades específicas (botox, rellenos, etc.)",
+        "Años de experiencia y casos exitosos",
+        "Testimonios con fotos de resultados",
+        "Horarios de consulta por especialista",
+        "Reconocimientos y formación internacional",
         "Integración con sistema de citas"
       ],
       price: "Desde $1,500,000 COP",
-      ctaText: "Solicitar Perfiles Médicos"
+      ctaText: "Solicitar Perfiles de Especialistas"
     }
   ];
 
   const whyChooseUs = [
     {
       icon: <CheckCircle className="w-8 h-8" />,
-      title: "Especialización en Salud",
-      description: "Conocemos las necesidades específicas del sector médico y odontológico"
+      title: "Especialización en Estética",
+      description: "Conocemos las necesidades específicas de clínicas estéticas y odontología cosmética"
     },
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Implementación Rápida",
-      description: "Tu presencia digital estará lista en 3-4 semanas máximo"
+      description: "Tu clínica estará atrayendo pacientes premium en 3-4 semanas máximo"
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Cumplimiento Normativo",
-      description: "Aseguramos el cumplimiento de regulaciones de salud y privacidad"
+      title: "Diseño Premium",
+      description: "Creamos presencias digitales que justifican precios premium en tratamientos"
     }
   ];
 
   const successMetrics = [
-    { number: "70%", label: "Reducción en llamadas" },
-    { number: "45%", label: "Más citas online" },
-    { number: "24/7", label: "Disponibilidad de agendamiento" },
-    { number: "10+", label: "Centros médicos exitosos" }
+    { number: "85%", label: "Más consultas estéticas" },
+    { number: "60%", label: "Aumento en tratamientos premium" },
+    { number: "24/7", label: "Atracción de pacientes" },
+    { number: "15+", label: "Clínicas estéticas exitosas" }
   ];
 
   return (
@@ -176,15 +175,15 @@ export const MedicalCentersServices: React.FC = () => {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full mb-6">
             <Stethoscope className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-            <span className="text-purple-700 dark:text-purple-300 font-medium">Especialistas en Salud Digital</span>
+            <span className="text-purple-700 dark:text-purple-300 font-medium">Especialistas en Clínicas Estéticas</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Moderniza tu centro médico y 
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"> atrae más pacientes</span>
+            Haz crecer tu clínica estética y 
+            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"> atrae pacientes premium</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Desde webs institucionales que inspiran confianza hasta sistemas de citas automatizados. 
-            Ayudamos a centros médicos y odontologías a brindar una experiencia digital profesional.
+            Desde webs que muestran tus mejores resultados hasta sistemas de citas para tratamientos premium. 
+            Ayudamos a clínicas estéticas, odontologías y consultorios privados a atraer pacientes de mayor valor.
           </p>
           
           {/* Success Metrics */}
@@ -206,7 +205,7 @@ export const MedicalCentersServices: React.FC = () => {
               href="#servicios"
               className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl font-medium"
             >
-              Ver Soluciones Médicas
+              Ver Soluciones para Clínicas
             </a>
             <Link
               to="/#contact"
@@ -334,7 +333,7 @@ export const MedicalCentersServices: React.FC = () => {
         {/* Why Choose Us */}
         <div className="mt-24 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-3xl p-12">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
-            ¿Por qué elegir nuestras soluciones médicas?
+            ¿Por qué elegir nuestras soluciones para clínicas estéticas?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {whyChooseUs.map((reason, index) => (
@@ -362,11 +361,11 @@ export const MedicalCentersServices: React.FC = () => {
             
             <div className="relative z-10">
               <h3 className="text-3xl font-bold mb-4">
-                ¿Listo para modernizar tu centro médico?
+                ¿Listo para hacer crecer tu clínica estética?
               </h3>
               <p className="text-purple-100 mb-8 max-w-2xl mx-auto text-lg">
-                No dejes que tus pacientes busquen alternativas. Ofrece una experiencia digital 
-                profesional que inspire confianza y facilite el acceso a tus servicios médicos.
+                No dejes que tus pacientes elijan a la competencia. Ofrece una experiencia digital 
+                premium que atraiga pacientes dispuestos a invertir en tratamientos de calidad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -377,7 +376,7 @@ export const MedicalCentersServices: React.FC = () => {
                   Solicitar Consulta Gratuita
                 </Link>
                 <a
-                  href="https://wa.me/573182010789?text=Hola Danna, quiero información sobre servicios web para mi centro médico"
+                  href="https://wa.me/573182010789?text=Hola Danna, quiero información sobre servicios web para mi clínica estética"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium shadow-lg"
