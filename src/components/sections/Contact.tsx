@@ -1,28 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle, Linkedin, Github, Instagram } from 'lucide-react';
+import { ContactFormData } from '../../types';
 
 export const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const FORM_ENDPOINT = 'https://formspree.io/f/mrblgvzn'; // <-- Replace this
+
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     subject: '',
     message: '',
-    projectType: 'web'
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // In a real app, this would send the data to a backend service
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setSelected(null);
+      } else {
+        setStatus('error');
+        console.error('Formspree Error:', result);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+    }
   };
+
+  // const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
+  const [selected, setSelected] = useState<{ id: string; title: string } | null>(null);
 
   const socialLinks = [
     {
