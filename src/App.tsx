@@ -5,7 +5,7 @@ import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Projects } from './components/sections/Projects';
 import { StyleBrand } from './components/sections/StyleBrand';
-import { Blog } from './components/sections/Blog';
+import { Blog } from './components/sections/BlogPreview.tsx';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/common/Footer.tsx';
 import FloatingCardsCarousel from './components/common/FloatingCardsCarousel/FloatingCardsCarousel.tsx';
@@ -75,7 +75,7 @@ function App() {
               />
               <Projects />
               <StyleBrand />
-              <Blog />
+              {/* <Blog /> */}
               <Contact />
             </>
           } />

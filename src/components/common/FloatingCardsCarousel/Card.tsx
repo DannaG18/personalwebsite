@@ -68,7 +68,7 @@ const Card: React.FC<CardProps> = ({
 
             </div>
           </div>
-          <div className="flex items-center gap-3 mb-4 mt-2">
+          <div className="flex items-center gap-3 mb-2">
             <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
             <p className="text-green-600 dark:text-green-400 font-semibold text-sm sm:text-sm">
               {shortBenefit}
@@ -76,7 +76,7 @@ const Card: React.FC<CardProps> = ({
           </div>
           <div className="flex-1 flex flex-col min-h-0">
             <div className="flex-1">
-              <p className="text-gray-600 dark:text-white mb-4 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-600 dark:text-white mb-2 leading-relaxed text-sm sm:text-base">
                 {description}
               </p>
 

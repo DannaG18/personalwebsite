@@ -1,5 +1,5 @@
 import { CardData } from '../types';
-import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette } from 'lucide-react';
+import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette, Heart } from 'lucide-react';
 
 export const sampleCards: CardData[] = [
   {
@@ -92,4 +92,22 @@ export const sampleCards: CardData[] = [
       "Formularios de contacto"
     ]
   },
+  {
+    id: '6',
+    title: "Páginas Web para Bodas",
+    description: "Crea el sitio web perfecto para tu boda con invitaciones digitales, confirmación de asistencia y toda la info para tus invitados",
+    shortBenefit: "Organiza tu boda de forma elegante y digital",
+    icon: <Heart className="w-8 h-8" />,
+    linkTo: "/services/weddings",
+    gradient: "from-pink-600 to-rose-600",
+    callToActionText: "Ver soluciones para bodas",
+    priceRange: "$700K - $2.0M COP",
+    features: [
+      "Invitaciones digitales elegantes",
+      "Sistema de confirmación RSVP",
+      "Galería de fotos de la pareja",
+      "Información de ceremonia y recepción",
+      "Lista de regalos integrada"
+    ]
+  }
 ];

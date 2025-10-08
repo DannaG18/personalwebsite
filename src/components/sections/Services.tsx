@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ServiceCard } from '../common/ServiceCard';
-import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette } from 'lucide-react';
+import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette, Heart } from 'lucide-react';
 
 export const Services: React.FC = () => {
   const serviceCategories = [
@@ -89,6 +89,23 @@ export const Services: React.FC = () => {
         "Aplicaciones digitales",
         "Landing page inicial"
       ]
+    },
+    {
+      title: "Páginas Web para Bodas",
+      description: "Crea el sitio web perfecto para tu boda con invitaciones digitales, confirmación de asistencia y toda la información para tus invitados",
+      shortBenefit: "Organiza tu boda de forma elegante y digital",
+      icon: <Heart className="w-8 h-8" />,
+      linkTo: "/services/weddings",
+      gradient: "from-pink-600 to-rose-600",
+      callToActionText: "Ver soluciones para bodas",
+      priceRange: "$700K - $2.0M COP",
+      features: [
+        "Invitaciones digitales elegantes",
+        "Sistema de confirmación RSVP",
+        "Galería de fotos de la pareja",
+        "Información de ceremonia y recepción",
+        "Lista de regalos integrada"
+      ]
     }
   ];
 
@@ -128,7 +145,7 @@ export const Services: React.FC = () => {
             ¿Qué tipo de negocio tienes?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Selecciona tu industria para ver las soluciones web específicas que pueden 
+            Selecciona tu industria para ver las soluciones web específicas que pueden
             transformar tu negocio y multiplicar tus ventas.
           </p>
         </div>
@@ -140,12 +157,12 @@ export const Services: React.FC = () => {
               key={index}
               title={category.title}
               description={category.description}
-            //   shortBenefit={category.shortBenefit}
+              //   shortBenefit={category.shortBenefit}
               icon={category.icon}
               linkTo={category.linkTo}
               gradient={category.gradient}
-            //   callToActionText={category.callToActionText}
-            //   priceRange={category.priceRange}
+              // callToActionText={category.callToActionText}
+              // priceRange={category.priceRange}
             //   features={category.features}
             />
           ))}
@@ -159,7 +176,7 @@ export const Services: React.FC = () => {
           <div className="relative">
             {/* Connection line */}
             <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-600 dark:to-indigo-600"></div>
-            
+
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
               {process.map((step, index) => (
                 <div key={index} className="relative text-center">

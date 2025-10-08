@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
     { href: '/services', label: 'Servicios', isRoute: true },
     { href: '/#projects', label: 'Proyectos', isRoute: false },
     { href: '/#style', label: 'Estilo', isRoute: false },
-    { href: '/#blog', label: 'Blog', isRoute: false },
+    // { href: '/#blog', label: 'Blog', isRoute: false },
     { href: '/#contact', label: 'Contacto', isRoute: false }
   ];
 
