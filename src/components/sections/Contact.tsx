@@ -143,7 +143,7 @@ export const Contact: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Formulario */}
-          <div className="bg-white dark:bg-navy-900 rounded-2xl p-8 shadow-xl">
+          <div className="bg-gradient-to-br from-blue-300 to-indigo-300 dark:bg-navy-900 rounded-2xl p-8 shadow-xl shadow-indigo-200 dark:shadow-navy-900/50">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Solicita tu consulta gratuita
             </h3>

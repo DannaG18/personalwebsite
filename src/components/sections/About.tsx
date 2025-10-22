@@ -38,13 +38,13 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white dark:bg-gray-900">
+    <section id="about" className="py-24 bg-gradient-to-br from-indigo-100 to-violet-50 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Sobre mí
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl  text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Hola, soy Danna y me encanta aprender cosas nuevas. Me considero una persona muy curiosa
             y siempre que veo un problema, busco una solución.
           </p>
@@ -55,10 +55,10 @@ export const About: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-blue-700 dark:text-blue-400">
               <Code2 className="w-6 h-6" />
-              <span className="font-medium">Mi historia como desarrolladora</span>
+              <span className="font-semibold">Mi historia como desarrolladora</span>
             </div>
 
-            <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+            <div className="text-base  space-y-5 text-gray-800 dark:text-gray-300 leading-relaxed">
               <p>
                 Cada reto que enfrento es una nueva oportunidad para aprender, contribuir y construir algo significativo.
                 Esta mentalidad me ha llevado a convertirme en desarrolladora de software y una apasionada de la tecnología.
@@ -123,7 +123,7 @@ export const About: React.FC = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-2xl bg-gray-50 dark:bg-navy-800 hover:bg-gradient-to-br hover:from-blue-100 hover:to-indigo-100 dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 transition-all duration-300 hover:shadow-lg"
+                className="text-center p-6 rounded-2xl bg-white dark:bg-navy-800 hover:bg-gradient-to-br hover:from-white hover:to-indigo-200 hover:shadow-indigo-300 dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg mx-auto mb-4 flex items-center justify-center text-white">
                   {value.icon}
@@ -148,7 +148,7 @@ export const About: React.FC = () => {
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="flex gap-4 p-6 rounded-2xl bg-gray-50 dark:bg-navy-800 hover:shadow-lg transition-all duration-300"
+                className="flex gap-4 p-6 rounded-2xl bg-white dark:bg-navy-800 hover:bg-gradient-to-br hover:from-white hover:to-indigo-200 hover:shadow-lg hover:shadow-indigo-300 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
                   {edu.icon}
