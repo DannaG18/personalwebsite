@@ -1,42 +1,62 @@
-import React, { useState, FormEvent, ChangeEvent } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle, Linkedin, Github, Instagram } from 'lucide-react';
-import { ContactFormData } from '../../types';
-import { Listbox } from '@headlessui/react';
-import { sampleCards } from '../common/FloatingCardsCarousel/data/sampleCards';
+import React, { useState, FormEvent, ChangeEvent } from "react";
+import {
+  Mail,
+  MapPin,
+  Send,
+  MessageCircle,
+  Linkedin,
+  Github,
+  Instagram,
+  ChevronDown
+} from "lucide-react";
+import { ContactFormData } from "../../types";
+import { Listbox } from "@headlessui/react";
+import { sampleCards } from "../common/FloatingCardsCarousel/data/sampleCards";
 
 export const Contact: React.FC = () => {
-  const FORM_ENDPOINT = 'https://formspree.io/f/mrblgvzn'; // <-- Replace this
+  const FORM_ENDPOINT = "https://formspree.io/f/mrblgvzn";
 
   const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    service: "",
+    budget: "",
+    subject: "",
+    message: "",
   });
 
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [selectedService, setSelectedService] = useState<
+    { id: string; title: string } | null
+  >(null);
+
+  const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      setStatus('error');
+      setStatus("error");
       return;
     }
 
-    setStatus('sending');
+    setStatus("sending");
 
     try {
       const res = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -44,67 +64,67 @@ export const Contact: React.FC = () => {
       const result = await res.json();
 
       if (res.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setSelected(null);
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          service: "",
+          budget: "",
+          subject: "",
+          message: "",
+        });
+        setSelectedService(null);
+        setSelectedBudget(null);
       } else {
-        setStatus('error');
-        console.error('Formspree Error:', result);
+        setStatus("error");
+        console.error("Formspree Error:", result);
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setStatus('error');
+      console.error("Error submitting form:", error);
+      setStatus("error");
     }
   };
 
-  // const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   setFormData({
-  //     ...formData,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-  const [selected, setSelected] = useState<{ id: string; title: string } | null>(null);
-
   const socialLinks = [
     {
-      name: 'LinkedIn',
+      name: "LinkedIn",
       icon: <Linkedin className="w-6 h-6" />,
-      url: 'https://linkedin.com/in/danna-alvarez',
-      color: 'hover:text-blue-600'
+      url: "https://www.linkedin.com/in/danna-alvarez-9794611a5/",
+      color: "hover:text-blue-600",
     },
     {
-      name: 'GitHub',
+      name: "GitHub",
       icon: <Github className="w-6 h-6" />,
-      url: 'https://github.com/danna-alvarez',
-      color: 'hover:text-gray-600'
+      url: "https://github.com/DannaG18",
+      color: "hover:text-gray-600",
     },
     {
-      name: 'Instagram',
+      name: "Instagram",
       icon: <Instagram className="w-6 h-6" />,
-      url: 'https://instagram.com/danna.dev',
-      color: 'hover:text-pink-600'
-    }
+      url: "https://instagram.com/dannag_alvarezr",
+      color: "hover:text-pink-600",
+    },
   ];
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
-      value: 'dg.alvarezr@gmail.com',
-      link: 'mailto:dg.alvarezr@gmail.com'
+      title: "Email",
+      value: "dg.alvarezr@gmail.com",
+      link: "mailto:dg.alvarezr@gmail.com",
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
-      title: 'WhatsApp',
-      value: '+57 318 201 0789',
-      link: 'https://wa.me/573182010789'
+      title: "WhatsApp",
+      value: "+57 318 201 0789",
+      link: "https://wa.me/573182010789",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: 'Ubicación',
-      value: 'Cúcuta, Norte de Santander, Colombia',
-      link: null
-    }
+      title: "Ubicación",
+      value: "Cúcuta, Norte de Santander, Colombia",
+      link: null,
+    },
   ];
 
   return (
@@ -115,13 +135,14 @@ export const Contact: React.FC = () => {
             Impulsa tu negocio hoy mismo
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            ¿Listo para llevar tu empresa al siguiente nivel? Solicita una consulta gratuita
-            y descubre cómo puedo ayudarte a atraer más clientes y aumentar tus ventas.
+            ¿Listo para llevar tu empresa al siguiente nivel? Solicita una
+            consulta gratuita y descubre cómo puedo ayudarte a atraer más
+            clientes y aumentar tus ventas.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Formulario */}
           <div className="bg-white dark:bg-navy-900 rounded-2xl p-8 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Solicita tu consulta gratuita
@@ -130,7 +151,10 @@ export const Contact: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Nombre y empresa
                   </label>
                   <input
@@ -140,13 +164,16 @@ export const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-navy-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                    placeholder="Juan Pérez - Mi Empresa S.A."
+                    placeholder="Juan Rojas - Mi Empresa S.A."
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email empresarial
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
+                    Email
                   </label>
                   <input
                     type="email"
@@ -155,87 +182,141 @@ export const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-navy-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                    placeholder="contacto@miempresa.com"
+                    placeholder="contacto@gmail.com"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  ¿Qué necesita tu negocio?
-                </label>
-                <Listbox
-                  value={selected}
-                  onChange={(value) => {
-                    setSelected(value);
-                    setFormData({
-                      ...formData,
-                      subject: value ? value.title : "", // 👈 sincroniza con formData.subject
-                    });
-                  }}
-                >
-                  <div className="relative">
-                    {/* Botón */}
-                    <Listbox.Button
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
-                      style={{ borderColor: "#C8BAAA" }}
-                    >
-                      {selected ? selected.title : "Selecciona un servicio"}
-                    </Listbox.Button>
+              {/* Selectores */}
+              <div className="grid lg:grid-cols-2 gap-12">
+                {/* Servicio */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    ¿Qué necesita tu negocio?
+                  </label>
+                  <Listbox
+                    value={selectedService}
+                    onChange={(value) => {
+                      setSelectedService(value);
+                      setFormData({
+                        ...formData,
+                        service: value ? value.title : "",
+                      });
+                    }}
+                  >
+                    <div className="relative">
+                      <Listbox.Button className="flex justify-between w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white">
+                        {selectedService
+                          ? selectedService.title
+                          : "Selecciona un servicio"}
+                          <ChevronDown/>
+                      </Listbox.Button>
 
-                    {/* Opciones */}
-                    <Listbox.Options className="absolute mt-1 w-full rounded-md bg-white shadow-lg border border-gray-200 z-10">
-                      {/* Placeholder */}
-                      <Listbox.Option
-                        key="placeholder"
-                        value={null}
-                        disabled
-                        className="cursor-not-allowed px-4 py-2 text-gray-400"
-                      >
-                        Selecciona un servicio
-                      </Listbox.Option>
-
-                      {/* Servicios */}
-                      {sampleCards.map((service) => (
+                      <Listbox.Options className="absolute mt-1 w-full rounded-md bg-white shadow-lg border border-gray-200 z-10">
+                        {sampleCards.map((service) => (
+                          <Listbox.Option
+                            key={service.id}
+                            value={service}
+                            className={({ active, selected }) =>
+                              `cursor-pointer px-4 py-2 ${
+                                active
+                                  ? "bg-[#5049E4] text-white"
+                                  : selected
+                                  ? "bg-[#0E0C63] text-white"
+                                  : "text-gray-800"
+                              }`
+                            }
+                          >
+                            {service.title}
+                          </Listbox.Option>
+                        ))}
                         <Listbox.Option
-                          key={service.id}
-                          value={service}
+                          key="otro-service"
+                          value={{ id: "otro", title: "Otro" }}
                           className={({ active, selected }) =>
-                            `cursor-pointer px-4 py-2 ${active
-                              ? "bg-[#800020] text-white"
-                              : selected
-                                ? "bg-[#291509] text-white"
+                            `cursor-pointer px-4 py-2 ${
+                              active
+                                ? "bg-[#4239CB] text-white"
+                                : selected
+                                ? "bg-[#0E0C63] text-white"
                                 : "text-gray-800"
                             }`
                           }
                         >
-                          {service.title}
+                          Otro
                         </Listbox.Option>
-                      ))}
+                      </Listbox.Options>
+                    </div>
+                  </Listbox>
+                </div>
 
-                      {/* Opción Otro */}
-                      <Listbox.Option
-                        key="otro"
-                        value={{ id: "otro", title: "Otro" }}
-                        className={({ active, selected }) =>
-                          `cursor-pointer px-4 py-2 ${active
-                            ? "bg-[#800020] text-white"
-                            : selected
-                              ? "bg-[#800020] text-white"
-                              : "text-gray-800"
-                          }`
-                        }
-                      >
-                        Otro
-                      </Listbox.Option>
-                    </Listbox.Options>
-                  </div>
-                </Listbox>
-              </div>  
+                {/* Presupuesto */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    ¿Qué presupuesto tienes?
+                  </label>
+                  <Listbox
+                    value={selectedBudget}
+                    onChange={(value) => {
+                      setSelectedBudget(value);
+                      setFormData({
+                        ...formData,
+                        budget: value || "",
+                      });
+                    }}
+                  >
+                    <div className="relative">
+                      <Listbox.Button className=" flex justify-between w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white">
+                        {selectedBudget || "Selecciona un rango"}
+                        <ChevronDown/>
+                      </Listbox.Button>
 
+                      <Listbox.Options className="absolute mt-1 w-full rounded-md bg-white shadow-lg border border-gray-200 z-10">
+                        {sampleCards.map((service) => (
+                          <Listbox.Option
+                            key={service.id}
+                            value={service.priceRange}
+                            className={({ active, selected }) =>
+                              `cursor-pointer px-4 py-2 ${
+                                active
+                                  ? "bg-[#5049E4] text-white"
+                                  : selected
+                                  ? "bg-[#0E0C63] text-white"
+                                  : "text-gray-800"
+                              }`
+                            }
+                          >
+                            {service.priceRange}
+                          </Listbox.Option>
+                        ))}
+                        <Listbox.Option
+                          key="otro-budget"
+                          value="Otro"
+                          className={({ active, selected }) =>
+                            `cursor-pointer px-4 py-2 ${
+                              active
+                                ? "bg-[#4239CB] text-white"
+                                : selected
+                                ? "bg-[#0E0C63] text-white"
+                                : "text-gray-800"
+                            }`
+                          }
+                        >
+                          Otro
+                        </Listbox.Option>
+                      </Listbox.Options>
+                    </div>
+                  </Listbox>
+                </div>
+              </div>
+
+              {/* Otros campos */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
                   Objetivo principal
                 </label>
                 <input
@@ -245,13 +326,16 @@ export const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-navy-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="Ej: Aumentar ventas online, atraer más clientes, mejorar imagen"
+                  placeholder="Ej: Aumentar ventas online"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
                   Cuéntame sobre tu negocio
                 </label>
                 <textarea
@@ -261,8 +345,8 @@ export const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-navy-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none"
-                  placeholder="Describe tu empresa, qué vendes/ofreces, cuáles son tus principales desafíos y qué esperas lograr con tu presencia digital..."
+                  placeholder="Describe tu empresa y tus objetivos..."
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white resize-none"
                 />
               </div>
 
@@ -276,14 +360,12 @@ export const Contact: React.FC = () => {
             </form>
           </div>
 
-          {/* Contact Info & Social */}
+          {/* Columna derecha */}
           <div className="space-y-8">
-            {/* Contact Information */}
             <div className="bg-white dark:bg-navy-900 rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Contacto directo
               </h3>
-
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -297,7 +379,7 @@ export const Contact: React.FC = () => {
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
+                          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
                         >
                           {info.value}
                         </a>
@@ -312,12 +394,10 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="bg-white dark:bg-navy-900 rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Conecta conmigo
               </h3>
-
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -325,32 +405,27 @@ export const Contact: React.FC = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 bg-gray-100 dark:bg-navy-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:shadow-lg`}
+                    className={`w-12 h-12 bg-gray-100 dark:bg-navy-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 ${social.color} hover:scale-110 hover:shadow-lg`}
                   >
                     {social.icon}
                   </a>
                 ))}
               </div>
-
-              <p className="text-gray-600 dark:text-gray-300 text-sm mt-4">
-                Comparto casos de éxito, tips de marketing digital y estrategias para hacer crecer tu negocio.
-              </p>
             </div>
 
-            {/* Quick Contact */}
             <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
               <h3 className="text-xl font-bold mb-4">
                 ¿Tienes una pregunta urgente?
               </h3>
               <p className="text-blue-100 mb-6">
-                Para consultas urgentes sobre tu proyecto o si necesitas una cotización rápida,
-                escríbeme por WhatsApp.
+                Para consultas urgentes o cotizaciones rápidas, escríbeme por
+                WhatsApp.
               </p>
               <a
                 href="https://wa.me/573182010789?text=Hola Danna, necesito ayuda con desarrollo web para mi negocio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-lg hover:bg-gray-100 font-medium"
               >
                 <MessageCircle className="w-5 h-5" />
                 Contactar por WhatsApp
@@ -359,11 +434,11 @@ export const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* Response Time */}
         <div className="text-center mt-12 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
           <p className="text-blue-800 dark:text-blue-300">
-            <strong>Garantía de respuesta:</strong> Te respondo en menos de 24 horas con una propuesta inicial.
-            Para consultas urgentes, WhatsApp es la vía más rápida.
+            <strong>Garantía de respuesta:</strong> Te respondo en menos de 24
+            horas con una propuesta inicial. Para consultas urgentes, WhatsApp
+            es la vía más rápida.
           </p>
         </div>
       </div>

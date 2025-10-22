@@ -16,7 +16,7 @@ export const Projects: React.FC = () => {
       id: 1,
       title: "Gabriela Ortiz - Consultora de Imagen",
       category: "portfolio",
-      description: "Desarollo y branding de un portafolio de servicios de diseñadora de modas e influencer Colombiana",
+      description: "Desarrollo y branding de un portafolio de servicios de diseñadora de modas e influencer Colombiana",
       image: "gabriela-portfolio.png",
       technologies: ["TypeScript", "Git", "React", "Conexión con Mail", "Conexión con WhatsApp", "Branding de Marca",],
       role: "Desarrolladora Full-Stack",

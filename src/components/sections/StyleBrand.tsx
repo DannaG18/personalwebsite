@@ -180,7 +180,7 @@ export const StyleBrand: React.FC = () => {
         </div>
 
         {/* Call to action */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
             ¿Tienes un proyecto en mente?
           </h4>
@@ -195,7 +195,7 @@ export const StyleBrand: React.FC = () => {
             Hablemos de tu proyecto
             <span>→</span>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

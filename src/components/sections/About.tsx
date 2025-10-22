@@ -26,14 +26,14 @@ export const About: React.FC = () => {
       title: "Técnico Laboral en Programación de Software",
       institution: "Campuslands",
       year: "2024",
-      description: "Formación en desarrollo con Java, Spring Boot y React"
+      description: "Formación en desarrollo Web Full Stack, bases de datos y metodologías ágiles"
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: "Certificaciones Tecnológicas",
       institution: "IBM, Microsoft, Cisco, Udemy",
       year: "2025",
-      description: "Certificaciones en fundamentos de IA, Ciber Security, desarrollo web y más"
+      description: "Certificaciones en IA, Ciberseguridad, Análisis de Datos, Inglés y más"
     }
   ];
 

@@ -23,17 +23,17 @@ export const Footer: React.FC = () => {
     {
       name: 'LinkedIn',
       icon: <Linkedin className="w-5 h-5" />,
-      url: 'https://linkedin.com/in/danna-alvarez'
+      url: 'https://www.linkedin.com/in/danna-alvarez-9794611a5/'
     },
     {
       name: 'GitHub',
       icon: <Github className="w-5 h-5" />,
-      url: 'https://github.com/danna-alvarez'
+      url: 'https://github.com/DannaG18'
     },
     {
       name: 'Instagram',
       icon: <Instagram className="w-5 h-5" />,
-      url: 'https://instagram.com/danna.dev'
+      url: 'https://instagram.com/dannag_alvarezr'
     },
     {
       name: 'Email',
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             <div>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-4">
-                Danna G. Álvarez R.
+                Danna Alvarez 
               </h3>
               <p className="text-gray-300 leading-relaxed max-w-md">
                 Desarrolladora de software especializada en crear soluciones web robustas para PyMEs. 
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               <Heart className="w-4 h-4 text-blue-400" />
               <span>y</span>
               <Code className="w-4 h-4 text-indigo-400" />
-              <span>por Danna</span>
+              <span>por DG</span>
             </div>
 
             {/* Social Links */}
@@ -124,15 +124,15 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Danna G. Álvarez R. Todos los derechos reservados.
+              © {currentYear} Danna Alvarez todos los derechos reservados.
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors duration-200">
+              {/* <a href="#" className="hover:text-white transition-colors duration-200">
                 Política de Privacidad
               </a>
               <a href="#" className="hover:text-white transition-colors duration-200">
                 Términos de Servicio
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
