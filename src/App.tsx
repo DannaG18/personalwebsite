@@ -16,6 +16,8 @@ import { OnlineStoresServices } from './pages/services/OnlineStoresServices.tsx'
 import { MedicalCentersServices } from './pages/services/MedicalCentersServices.tsx';
 import { WebBrandDesignServices } from './pages/services/WebBrandDesignServices.tsx';
 import { PersonalBrandServices } from './pages/services/PersonalBrandServices.tsx';
+import { WeddingServices } from './pages/services/WeddingServices.tsx';
+import { LandingPagesServices } from './pages/services/LandingPagesServices.tsx';
 
 function App() {
   // const { width } = useWindowSize();
@@ -87,6 +89,8 @@ function App() {
           <Route path="/services/medical" element={<MedicalCentersServices />} />
           <Route path="/services/personal-brand" element={<PersonalBrandServices />} />
           <Route path="/services/web-brand" element={<WebBrandDesignServices />} />
+          <Route path="/services/wedding" element={<WeddingServices/>} />
+          <Route path="/services/landing" element={<LandingPagesServices/>} />
         </Routes>
         <Footer />
       </div>

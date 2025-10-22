@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Star, TrendingUp } from 'lucide-react';
 // import { CardData } from './types';
-import {CardProps} from './types';
+import { CardProps } from './types';
 
 const Card: React.FC<CardProps> = ({
   card,
@@ -32,23 +32,24 @@ const Card: React.FC<CardProps> = ({
       <div
         onClick={onClick}
         className={`
-          relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/10 to-white/5
-          backdrop-blur-md border border-white/20 shadow-2xl hover:shadow-cyan-500/25
-          transition-all duration-500 ease-out hover:scale-105 hover:border-cyan-400/50 group
-          ${isActive ? 'ring-2 ring-cyan-400 shadow-cyan-400/50' : ''}
-          cursor-pointer flex flex-col
-          w-full max-w-md mx-auto
-          h-auto min-h-[600px]
-          sm:min-h-[600px]
-          lg:w-[360px] lg:h-[580px] lg:min-h-0
-        `}
+        relative rounded-2xl overflow-hidden bg-gradient-to-br dark:from-blue-950 
+        backdrop-blur-md border border-white/10 shadow-xl
+        transition-all duration-500 ease-out hover:scale-105 group
+        ${isActive ? 'ring-1 ring-cyan-300 shadow-cyan-300/30' : ''}
+        cursor-pointer flex flex-col
+        w-full max-w-md mx-auto
+        h-auto min-h-[600px]
+        sm:min-h-[600px]
+        lg:w-[360px] lg:h-[580px] lg:min-h-0
+      `}
+
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
 
         <div className="relative z-10 p-5 sm:p-6 h-full flex flex-col">
           {title.includes('Marca Personal y Portafolios') && (
             <div className="absolute top-3 right-3">
-              <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-bold rounded-full">
+              <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-400  text-white text-xs font-bold rounded-full">
                 <Star className="w-3 h-3" />
                 Popular
               </span>
@@ -139,57 +140,57 @@ const Card: React.FC<CardProps> = ({
   }
 
   // Modo carrusel 3D (para las tarjetas de fondo)
-//   const spacingMultiplier = 2.1;
-//   const angle = (360 / (totalCards * spacingMultiplier)) * index;
-//   const rotateY = angle - currentRotation;
-//   const dynamicRadius = Math.max(250, 1000 / totalCards);
-//   const translateZ = dynamicRadius;
+  //   const spacingMultiplier = 2.1;
+  //   const angle = (360 / (totalCards * spacingMultiplier)) * index;
+  //   const rotateY = angle - currentRotation;
+  //   const dynamicRadius = Math.max(250, 1000 / totalCards);
+  //   const translateZ = dynamicRadius;
 
-//   const normalizedRotation = ((rotateY % 360) + 360) % 360;
+  //   const normalizedRotation = ((rotateY % 360) + 360) % 360;
 
-//   let opacity = 0.3;
-//   if (normalizedRotation > 120 && normalizedRotation < 240) {
-//     opacity = 0.1 + 0.2 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
-//   }
+  //   let opacity = 0.3;
+  //   if (normalizedRotation > 120 && normalizedRotation < 240) {
+  //     opacity = 0.1 + 0.2 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
+  //   }
 
-//   let scale = 0.6;
-//   if (normalizedRotation > 40 && normalizedRotation < 270) {
-//     scale = 0.5 + 0.1 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
-//   }
+  //   let scale = 0.6;
+  //   if (normalizedRotation > 40 && normalizedRotation < 270) {
+  //     scale = 0.5 + 0.1 * Math.cos((normalizedRotation - 180) * Math.PI / 180);
+  //   }
 
-//   const cardStyle: React.CSSProperties = {
-//     position: 'absolute',
-//     width: `${cardWidth}px`,
-//     height: `${cardHeight}px`,
-//     left: '50%',
-//     top: '30%',
-//     marginLeft: `-${cardWidth / 2}px`,
-//     marginTop: `-${cardHeight / 2}px`,
-//     transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px) scale(${scale})`,
-//     opacity,
-//     transition: 'transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.4s ease',
-//     cursor: 'pointer',
-//     transformStyle: 'preserve-3d',
-//     willChange: 'transform, opacity',
-//     pointerEvents: 'none'
-//   };
+  //   const cardStyle: React.CSSProperties = {
+  //     position: 'absolute',
+  //     width: `${cardWidth}px`,
+  //     height: `${cardHeight}px`,
+  //     left: '50%',
+  //     top: '30%',
+  //     marginLeft: `-${cardWidth / 2}px`,
+  //     marginTop: `-${cardHeight / 2}px`,
+  //     transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px) scale(${scale})`,
+  //     opacity,
+  //     transition: 'transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.4s ease',
+  //     cursor: 'pointer',
+  //     transformStyle: 'preserve-3d',
+  //     willChange: 'transform, opacity',
+  //     pointerEvents: 'none'
+  //   };
 
-//   return (
-//     <div
-//       style={cardStyle}
-//       className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 shadow-lg"
-//     >
-//       <div className="relative z-10 p-6 h-full flex flex-col justify-between">
-//         <div className="relative z-10">
-//           <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-xl mb-4 flex items-center justify-center text-white shadow-lg`}>
-//             {icon}
-//           </div>
-//           <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-//           <p className="text-white/70 text-sm leading-relaxed line-clamp-3">{description}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
+  //   return (
+  //     <div
+  //       style={cardStyle}
+  //       className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 shadow-lg"
+  //     >
+  //       <div className="relative z-10 p-6 h-full flex flex-col justify-between">
+  //         <div className="relative z-10">
+  //           <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-xl mb-4 flex items-center justify-center text-white shadow-lg`}>
+  //             {icon}
+  //           </div>
+  //           <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
+  //           <p className="text-white/70 text-sm leading-relaxed line-clamp-3">{description}</p>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
 };
 
 export default Card;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { 
   Heart, 
@@ -163,11 +162,10 @@ export const WeddingServices: React.FC = () => {
 
   return (
     <>
-      <Helmet>
         <title>Páginas Web para Bodas - Invitaciones Digitales | Danna Álvarez</title>
         <meta name="description" content="Crea una experiencia digital inolvidable para tu boda con invitaciones elegantes, sitios web completos y galerías post-boda. Organiza tu boda de forma moderna." />
         <meta name="keywords" content="páginas web para bodas, invitaciones digitales, sitios web matrimonio, RSVP online, lista regalos boda" />
-      </Helmet>
+
       <section className="py-24 bg-white dark:bg-gray-900 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}

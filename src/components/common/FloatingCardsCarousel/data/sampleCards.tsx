@@ -1,5 +1,5 @@
 import { CardData } from '../types';
-import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette, Heart } from 'lucide-react';
+import { UtensilsCrossed, ShoppingBag, Stethoscope, User, Palette, Heart, Zap } from 'lucide-react';
 
 export const sampleCards: CardData[] = [
   {
@@ -76,7 +76,7 @@ export const sampleCards: CardData[] = [
   },
   {
     id: '5',
-    title: 'Centros Médicos y Odontologías',
+    title: 'Clinicas Estéticas y Odontologías',
     description: "Inspira confianza profesional y facilita que nuevos pacientes te encuentren y agenden citas",
     shortBenefit: "Más pacientes con citas automatizadas",
     icon: <Stethoscope className="w-8 h-8" />,
@@ -94,11 +94,11 @@ export const sampleCards: CardData[] = [
   },
   {
     id: '6',
-    title: "Páginas Web para Bodas",
+    title: "Invitaciones para Bodas",
     description: "Crea el sitio web perfecto para tu boda con invitaciones digitales, confirmación de asistencia y toda la info para tus invitados",
     shortBenefit: "Organiza tu boda de forma elegante y digital",
     icon: <Heart className="w-8 h-8" />,
-    linkTo: "/services/weddings",
+    linkTo: "/services/wedding",
     gradient: "from-pink-600 to-rose-600",
     callToActionText: "Ver soluciones para bodas",
     priceRange: "$700K - $2.0M COP",
@@ -108,6 +108,24 @@ export const sampleCards: CardData[] = [
       "Galería de fotos de la pareja",
       "Información de ceremonia y recepción",
       "Lista de regalos integrada"
+    ]
+  },
+    {
+    id: '8',
+    title: "Landing Pages de Alto Impacto",
+    description: "Páginas de conversión optimizadas para influencers, coaches y negocios que buscan generar leads y ventas específicas",
+    shortBenefit: "Hasta 5x más conversiones que redes sociales",
+    icon: <Zap className="w-8 h-8" />,
+    linkTo: "/services/landing",
+    gradient: "from-yellow-600 to-orange-600",
+    callToActionText: "Ver soluciones de conversión",
+    priceRange: "$800K - $2.5M COP",
+    features: [
+      "Diseño optimizado para conversión",
+      "Formularios de captura de leads",
+      "Integración con herramientas de marketing",
+      "A/B testing para optimización",
+      "Analytics y seguimiento de conversiones"
     ]
   }
 ];
