@@ -12,7 +12,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Developer working on code',
-      image: 'grid6.jpeg',
+      image: '/photo-gallery/grid6.jpeg',
       // image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800',
       gradient: 'from-indigo-600 to-purple-600'
     },
@@ -25,7 +25,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Team collaboration in software development',
-      image: 'grid9.jpeg',
+      image: '/photo-gallery/grid9.jpeg',
       // gradient: 'from-blue-600 to-indigo-600'  
     },
     {
@@ -37,7 +37,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Modern web development workspace',
-      image: 'me2.jpeg',
+      image: '/photo-gallery/me2.jpeg',
       gradient: 'from-blue-700 to-purple-700'
     },
     {
@@ -49,7 +49,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Clean code and best practices',
-      image: 'me-book.jpeg',
+      image: '/photo-gallery/me-book.jpeg',
       // image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
       gradient: 'from-indigo-700 to-blue-700'
     },
@@ -62,7 +62,7 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Learning and growth mindset',
-      image: 'grid1.jpeg',
+      image: '/photo-gallery/grid1.jpeg',
       gradient: 'from-indigo-800 to-purple-800'
     },
     {
@@ -74,13 +74,13 @@ export const StyleBrand: React.FC = () => {
     {
       type: 'image',
       content: 'Technology transforming lives',
-      image: 'grid2.jpeg',
+      image: '/photo-gallery/grid2.jpeg',
       gradient: 'from-blue-900 to-indigo-900'
     }
   ];
 
   return (
-    <section id="style" className="py-24 bg-gray-50 dark:bg-gray-800">
+    <section id="style" className="py-24 bg-indigo-100 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -139,7 +139,7 @@ export const StyleBrand: React.FC = () => {
         </div>
 
         {/* Brand Philosophy */}
-        <div className="bg-white dark:bg-navy-900 rounded-2xl p-8 md:p-12 shadow-xl">
+        <div className="shadow-blue-200 dark:shadow-2xl dark:shadow-blue-950 bg-white dark:bg-navy-900 rounded-2xl p-8 md:p-12 shadow-xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -162,7 +162,7 @@ export const StyleBrand: React.FC = () => {
             </div>
             
             <div className="relative">
-              <div className="bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl p-8 h-80 flex items-center justify-center">
+              <div className="transition duration-300 ease-out hover:scale-105 bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl p-8 h-80 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <Sparkles className="w-12 h-12 text-white" />

@@ -81,7 +81,7 @@ const FloatingCardsCarousel: React.FC<FloatingCardsCarouselProps> = ({
   }
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 md:py-24 bg-blue-100 dark:bg-gray-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
@@ -228,6 +228,47 @@ const FloatingCardsCarousel: React.FC<FloatingCardsCarouselProps> = ({
                 type="button"
               />
             ))}
+          </div>
+        {/* Process Section */}
+          <div className="bg-indigo-50 dark:bg-slate-800 shadow-xl backdrop-blur-sm rounded-2xl p-8 lg:p-8 border border-white/10 mt-10">
+            <div className="text-center space-y-12">
+              <h3 className="text-2xl lg:text-3xl font-bold text-black dark:text-white">
+                Mi Proceso de Trabajo
+              </h3>
+              
+              <div className="grid md:grid-cols-4 gap-2">
+                {[
+                  { 
+                    step: '01', 
+                    title: 'Descubrimiento', 
+                    description: 'Entendemos tu visión, objetivos y necesidades específicas' 
+                  },
+                  { 
+                    step: '02', 
+                    title: 'Planificación', 
+                    description: 'Diseñamos la arquitectura y definimos el roadmap del proyecto' 
+                  },
+                  { 
+                    step: '03', 
+                    title: 'Desarrollo', 
+                    description: 'Construimos con código limpio, siguiendo las mejores prácticas' 
+                  },
+                  { 
+                    step: '04', 
+                    title: 'Entrega', 
+                    description: 'Lanzamos tu proyecto con soporte y documentación completa' 
+                  }
+                ].map((phase) => (
+                  <div key={phase.step} className="text-center space-y-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-[#7B55DF] to-[#14136A] rounded-full flex items-center justify-center mx-auto">
+                      <span className="text-xl font-bold text-white dark:text-white">{phase.step}</span>
+                    </div>
+                    <h4 className="text-xl font-semibold text-black dark:text-white">{phase.title}</h4>
+                    <p className="text-gray-800 dark:text-white text-md leading-relaxed">{phase.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

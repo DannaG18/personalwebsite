@@ -78,7 +78,7 @@ export const About: React.FC = () => {
             <div className="pt-6">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200"
+                className="transition duration-300 ease-out hover:scale-105 inline-flex items-center gap-2 text-blue-700 dark:bg-navy-800 text-gray-900 dark:text-white border-2 border-indigo-300 dark:border-navy-600 p-4 rounded-lg hover:border-blue-700 dark:hover:border-blue-400 font-medium"
               >
                 Trabajemos juntos
                 <span>→</span>
@@ -123,7 +123,7 @@ export const About: React.FC = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-2xl bg-white dark:bg-navy-800 hover:bg-gradient-to-br hover:from-white hover:to-indigo-200 hover:shadow-indigo-300 dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 transition-all duration-300 hover:shadow-lg"
+                className="text-center p-6 rounded-2xl bg-white dark:bg-navy-800 transition duration-300 ease-out hover:scale-105 hover:bg-gradient-to-br hover:from-white hover:to-indigo-200 hover:shadow-indigo-200 dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 transition-all dark:shadow-blue-900 duration-300 hover:shadow-lg"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg mx-auto mb-4 flex items-center justify-center text-white">
                   {value.icon}
@@ -148,7 +148,7 @@ export const About: React.FC = () => {
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="flex gap-4 p-6 rounded-2xl bg-white dark:bg-navy-800 hover:bg-gradient-to-br hover:from-white hover:to-indigo-200 hover:shadow-lg hover:shadow-indigo-300 transition-all duration-300"
+                className="flex gap-4 p-6 rounded-2xl bg-white transition duration-500 ease-out hover:scale-105 dark:bg-navy-800 hover:bg-gradient-to-br hover:from-white hover:to-indigo-200 hover:shadow-lg dark:hover:from-blue-900/20 dark:hover:to-indigo-900/20 dark:shadow-blue-900 hover:shadow-indigo-200 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
                   {edu.icon}

@@ -122,19 +122,27 @@ export const Contact: React.FC = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Ubicación",
-      value: "Cúcuta, Norte de Santander, Colombia",
+      value: "Colombia",
       link: null,
     },
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 dark:from-gray-800 dark:to-gray-800" />
+      {/* <div className="absolute inset-0 opacity-40">
+        <img
+          src="/backgrounds/contact-bg-2.png"
+          alt="Textura natural de lino"
+          className="w-full h-full "
+        />
+      </div> */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 inset-0 relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white dark:text-white mb-4">
             Impulsa tu negocio hoy mismo
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 dark:text-gray-300 max-w-3xl mx-auto">
             ¿Listo para llevar tu empresa al siguiente nivel? Solicita una
             consulta gratuita y descubre cómo puedo ayudarte a atraer más
             clientes y aumentar tus ventas.
@@ -143,7 +151,7 @@ export const Contact: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Formulario */}
-          <div className="bg-gradient-to-br from-blue-300 to-indigo-300 dark:bg-navy-900 rounded-2xl p-8 shadow-xl shadow-indigo-200 dark:shadow-navy-900/50">
+          <div className="bg-white dark:bg-navy-900 rounded-2xl p-8  dark:shadow-navy-900/50">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Solicita tu consulta gratuita
             </h3>
@@ -165,7 +173,7 @@ export const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     placeholder="Juan Rojas - Mi Empresa S.A."
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
+                    className="bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-500 dark:to-indigo-500 w-full px-4 py-3 border border-gray-300 placeholder:text-gray-100 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-navy-800 text-gray-800 dark:text-white"
                   />
                 </div>
                 <div>
@@ -183,7 +191,7 @@ export const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     placeholder="contacto@gmail.com"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
+                    className="bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-500 dark:to-indigo-500 w-full px-4 py-3 border border-gray-300 dark:border-navy-600 rounded-lg focus:ring-2 placeholder:text-gray-100 focus:ring-blue-500 dark:bg-navy-800 text-gray-800 dark:text-white"
                   />
                 </div>
               </div>
@@ -206,11 +214,11 @@ export const Contact: React.FC = () => {
                     }}
                   >
                     <div className="relative">
-                      <Listbox.Button className="flex justify-between w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white">
+                      <Listbox.Button className="bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-500 dark:to-indigo-500 flex justify-between w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-800 dark:text-white">
                         {selectedService
                           ? selectedService.title
                           : "Selecciona un servicio"}
-                          <ChevronDown/>
+                        <ChevronDown />
                       </Listbox.Button>
 
                       <Listbox.Options className="absolute mt-1 w-full rounded-md bg-white shadow-lg border border-gray-200 z-10">
@@ -219,10 +227,9 @@ export const Contact: React.FC = () => {
                             key={service.id}
                             value={service}
                             className={({ active, selected }) =>
-                              `cursor-pointer px-4 py-2 ${
-                                active
-                                  ? "bg-[#5049E4] text-white"
-                                  : selected
+                              `cursor-pointer px-4 py-2 ${active
+                                ? "bg-[#5049E4] text-white"
+                                : selected
                                   ? "bg-[#0E0C63] text-white"
                                   : "text-gray-800"
                               }`
@@ -235,10 +242,9 @@ export const Contact: React.FC = () => {
                           key="otro-service"
                           value={{ id: "otro", title: "Otro" }}
                           className={({ active, selected }) =>
-                            `cursor-pointer px-4 py-2 ${
-                              active
-                                ? "bg-[#4239CB] text-white"
-                                : selected
+                            `cursor-pointer px-4 py-2 ${active
+                              ? "bg-[#4239CB] text-white"
+                              : selected
                                 ? "bg-[#0E0C63] text-white"
                                 : "text-gray-800"
                             }`
@@ -267,9 +273,9 @@ export const Contact: React.FC = () => {
                     }}
                   >
                     <div className="relative">
-                      <Listbox.Button className=" flex justify-between w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white">
+                      <Listbox.Button className="bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-500 dark:to-indigo-500 flex justify-between w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-800 dark:text-white">
                         {selectedBudget || "Selecciona un rango"}
-                        <ChevronDown/>
+                        <ChevronDown />
                       </Listbox.Button>
 
                       <Listbox.Options className="absolute mt-1 w-full rounded-md bg-white shadow-lg border border-gray-200 z-10">
@@ -278,10 +284,9 @@ export const Contact: React.FC = () => {
                             key={service.id}
                             value={service.priceRange}
                             className={({ active, selected }) =>
-                              `cursor-pointer px-4 py-2 ${
-                                active
-                                  ? "bg-[#5049E4] text-white"
-                                  : selected
+                              `cursor-pointer px-4 py-2 ${active
+                                ? "bg-[#5049E4] text-white"
+                                : selected
                                   ? "bg-[#0E0C63] text-white"
                                   : "text-gray-800"
                               }`
@@ -294,10 +299,9 @@ export const Contact: React.FC = () => {
                           key="otro-budget"
                           value="Otro"
                           className={({ active, selected }) =>
-                            `cursor-pointer px-4 py-2 ${
-                              active
-                                ? "bg-[#4239CB] text-white"
-                                : selected
+                            `cursor-pointer px-4 py-2 ${active
+                              ? "bg-[#4239CB] text-white"
+                              : selected
                                 ? "bg-[#0E0C63] text-white"
                                 : "text-gray-800"
                             }`
@@ -327,7 +331,7 @@ export const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   placeholder="Ej: Aumentar ventas online"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
+                  className="bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-500 dark:to-indigo-500 placeholder:text-gray-100 w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white"
                 />
               </div>
 
@@ -346,7 +350,7 @@ export const Contact: React.FC = () => {
                   required
                   rows={6}
                   placeholder="Describe tu empresa y tus objetivos..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white resize-none"
+                  className="bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-500 dark:to-indigo-500 placeholder:text-gray-100 w-full px-4 py-3 border border-gray-300 rounded-lg bg-white dark:bg-navy-800 text-gray-900 dark:text-white resize-none"
                 />
               </div>
 

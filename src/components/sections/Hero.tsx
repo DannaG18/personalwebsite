@@ -34,13 +34,13 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="#projects"
-                className="px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 text-white rounded-lg hover:from-blue-800 hover:to-indigo-800 transition-all duration-200 shadow-lg hover:shadow-xl font-medium"
+                className="transition duration-300 ease-out hover:scale-105 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 text-white rounded-lg hover:from-blue-600 hover:to-indigo-600 transition-all duration-200 shadow-lg hover:shadow-xl font-medium"
               >
                 Ver proyectos exitosos
               </a>
               <a
                 href="#contact"
-                className="px-8 py-4 bg-white dark:bg-navy-800 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-navy-600 rounded-lg hover:border-blue-700 dark:hover:border-blue-400 transition-all duration-200 font-medium"
+                className="transition duration-300 ease-out hover:scale-105 px-8 py-4 bg-white dark:bg-navy-800 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-navy-600 rounded-lg hover:border-blue-700 dark:hover:border-blue-400 transition-all duration-200 font-medium"
               >
                 Cotización gratuita
               </a>

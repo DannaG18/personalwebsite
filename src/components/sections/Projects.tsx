@@ -17,7 +17,7 @@ export const Projects: React.FC = () => {
       title: "Gabriela Ortiz - Consultora de Imagen",
       category: "portfolio",
       description: "Desarrollo y branding de un portafolio de servicios de diseñadora de modas e influencer Colombiana",
-      image: "gabriela-portfolio.png",
+      image: "/projects/gabriela-portfolio.png",
       technologies: ["TypeScript", "Git", "React", "Conexión con Mail", "Conexión con WhatsApp", "Branding de Marca",],
       role: "Desarrolladora Full-Stack",
       learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
@@ -31,7 +31,7 @@ export const Projects: React.FC = () => {
       title: "Portfolio Personal",
       category: "web",
       description: "Sitio web personal que muestra mis habilidades y proyectos de desarrollo",
-      image: "personal-portfolio.png  ",
+      image: "/projects/personal-portfolio.png  ",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
       role: "Desarrolladora Full Stack",
       learnings: "Diseño responsive y optimización de rendimiento",
@@ -44,7 +44,7 @@ export const Projects: React.FC = () => {
       title: "Web Site Hamburguesas",
       category: "web",
       description: "Sitio web para mostrar productos de comida rápida, principalmente hamburguesas",
-      image: "1.png",
+      image: "/projects/1.png",
       technologies: ["JavaScript", "HTML", "CSS", "Git"],
       role: "Líder Estudiantil de Tecnología",
       learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
@@ -57,7 +57,7 @@ export const Projects: React.FC = () => {
       title: "Landing Pages - Proyectos Personales",
       category: "web",
       description: "Diversas landing pages desarrolladas durante mi formación como desarrolladora web",
-      image: "3.png",
+      image: "/projects/3.png",
       technologies: ["HTML","CSS", "Responsive Design", "Git"],
       role: "Estudiante Desarrolladora",
       learnings: "Fundamentos sólidos en programación orientada a objetos y desarrollo web",
@@ -84,7 +84,7 @@ export const Projects: React.FC = () => {
       title: "PrestService - Plataforma Full Stack",
       category: "web",
       description: "Plataforma de administración segura desarrollada con Java, Spring Boot, React y MySQL",
-      image: "6.png",
+      image: "/projects/6.png",
       technologies: ["Java", "Spring Boot", "React", "MySQL", "Firebase"],
       role: "Desarrolladora Full Stack",
       learnings: "Implementación de CRUD, autenticación JWT y principios SOLID",
@@ -97,7 +97,7 @@ export const Projects: React.FC = () => {
       title: "Sistema de Ventas de Electricidad",
       category: "web",
       description: "Aplicación de escritorio Java con arquitectura hexagonal para seguimiento de ventas",
-      image: "4.png",
+      image: "/projects/4.png",
       technologies: ["Java", "Swing", "Arquitectura Hexagonal", "MySQL"],
       role: "Desarrolladora Backend",
       learnings: "Diseño de interfaces intuitivas y gestión de roles de usuario",
@@ -115,13 +115,13 @@ export const Projects: React.FC = () => {
   const regularProjects = projects.filter(project => !project.featured);
 
   return (
-    <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-800">
+    <section id="projects" className="py-24 bg-gradient-to-r from-blue-400 to-indigo-400 dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white dark:text-white mb-4">
             Casos de éxito empresarial
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 dark:text-gray-300 max-w-3xl mx-auto">
             Empresas reales que han transformado su presencia digital y multiplicado sus ventas.
             Conoce cómo puedo ayudar a tu negocio a lograr resultados similares.
           </p>
@@ -146,7 +146,7 @@ export const Projects: React.FC = () => {
         {/* Featured Project */}
         {featuredProject && activeCategory === 'todos' && (
           <div className="mb-16">
-            <div className="bg-white dark:bg-navy-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="transition duration-700 ease-out hover:scale-105 bg-white dark:bg-navy-900 rounded-2xl overflow-hidden shadow-2xl shadow-blue-200 hover:shadow-blue-300 dark:shadow-blue-950 dark:hover:shadow-blue-900 hover:shadow-2xl transition-all duration-300">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative h-64 lg:h-auto">
                   <img
@@ -195,7 +195,7 @@ export const Projects: React.FC = () => {
                       href={featuredProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                      className=" flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Ver caso de éxito
@@ -204,7 +204,7 @@ export const Projects: React.FC = () => {
                       href={featuredProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-navy-800 border-2 border-gray-300 dark:border-navy-600 text-gray-900 dark:text-white rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200"
+                      className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-navy-800 border-2 border-gray-300  dark:border-navy-600 text-gray-900 dark:text-white rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200"
                     >
                       <Github className="w-4 h-4" />
                       Detalles técnicos
@@ -221,7 +221,7 @@ export const Projects: React.FC = () => {
           {filteredProjects.filter(project => !project.featured).map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-navy-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="transition duration-300 ease-out hover:scale-105 dark:hover:shadow-blue-900 dark:shadow-blue-950 bg-white dark:bg-navy-900 rounded-2xl overflow-hidden shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-200 transition-all duration-300 group"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -299,7 +299,7 @@ export const Projects: React.FC = () => {
         <div className="text-center mt-12">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-navy-800 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-navy-600 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200 font-medium"
+            className="transition duration-300 ease-out hover:scale-105 inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-navy-800 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-navy-600 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200 font-medium"
           >
             <Heart className="w-5 h-5" />
             ¿Listo para transformar tu negocio?
