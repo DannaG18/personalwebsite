@@ -12,20 +12,20 @@ export const Projects: React.FC = () => {
   ];
 
   const projects = [
-    {
-      id: 1,
-      title: "Gabriela Ortiz - Consultora de Imagen",
-      category: "portfolio",
-      description: "Desarrollo y branding de un portafolio de servicios de diseñadora de modas e influencer Colombiana",
-      image: "/projects/gabriela-portfolio.png",
-      technologies: ["TypeScript", "Git", "React", "Conexión con Mail", "Conexión con WhatsApp", "Branding de Marca",],
-      role: "Desarrolladora Full-Stack",
-      learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
-      results: "Presencia digital profesional y aumento de consultas de servicio",
-      liveUrl: "https://gabriela-go.netlify.app/",
-      githubUrl: "https://github.com/DannaG18/go_website",
-      featured: true,
-    }, 
+    // {
+    //   id: 1,
+    //   title: "Gabriela Ortiz - Consultora de Imagen",
+    //   category: "portfolio",
+    //   description: "Desarrollo y branding de un portafolio de servicios de diseñadora de modas e influencer Colombiana",
+    //   image: "/projects/gabriela-portfolio.png",
+    //   technologies: ["TypeScript", "Git", "React", "Conexión con Mail", "Conexión con WhatsApp", "Branding de Marca",],
+    //   role: "Desarrolladora Full-Stack",
+    //   learnings: "Habilidades de liderazgo y enseñanza de mejores prácticas",
+    //   results: "Presencia digital profesional y aumento de consultas de servicio",
+    //   liveUrl: "https://gabriela-go.netlify.app/",
+    //   githubUrl: "https://github.com/DannaG18/go_website",
+    //   featured: true,
+    // }, 
     {
       id: 2,
       title: "Portfolio Personal",
