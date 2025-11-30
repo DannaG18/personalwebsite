@@ -38,6 +38,7 @@ export const Projects: React.FC = () => {
       results: "Sitio web profesional que destaca mis habilidades técnicas",
       liveUrl: "https://dgportfolio-one.vercel.app",
       githubUrl: "https://github.com/DannaG18/dgportfolio",
+      featured: true,
     },
     {
       id: 3,
